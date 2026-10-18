@@ -35,8 +35,75 @@
 #include <cstdint>
 #include <cstring>
 #include <dlfcn.h>
+#include <fstream>
+#include <sstream>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <vector>
+#include <string>
 
 namespace mcbedvr {
+
+static void EnsureDirectoryExists(const std::string& path) {
+    size_t pos = 0;
+    while ((pos = path.find('/', pos + 1)) != std::string::npos) {
+        std::string sub = path.substr(0, pos);
+        mkdir(sub.c_str(), 0777);
+    }
+}
+
+void PatchBedrockOptions(const char* baseDir) {
+    std::vector<std::string> candidatePaths;
+    if (baseDir && std::strlen(baseDir) > 0) {
+        candidatePaths.push_back(std::string(baseDir) + "/games/com.mojang/minecraftpe/options.txt");
+    }
+    candidatePaths.push_back("/data/data/com.mojang.minecraftpe/files/games/com.mojang/minecraftpe/options.txt");
+    candidatePaths.push_back("/data/user/0/com.mojang.minecraftpe/files/games/com.mojang/minecraftpe/options.txt");
+    candidatePaths.push_back("/sdcard/games/com.mojang/minecraftpe/options.txt");
+    candidatePaths.push_back("/sdcard/Android/data/com.mojang.minecraftpe/files/games/com.mojang/minecraftpe/options.txt");
+
+    for (const auto& path : candidatePaths) {
+        EnsureDirectoryExists(path);
+
+        std::vector<std::string> lines;
+        bool foundHideHand = false;
+        bool foundFov = false;
+        bool foundBobbing = false;
+
+        std::ifstream inFile(path);
+        if (inFile.is_open()) {
+            std::string line;
+            while (std::getline(inFile, line)) {
+                if (line.rfind("gfx_hidehand:", 0) == 0) {
+                    lines.push_back("gfx_hidehand:1");
+                    foundHideHand = true;
+                } else if (line.rfind("gfx_field_of_view:", 0) == 0) {
+                    lines.push_back("gfx_field_of_view:110.000000");
+                    foundFov = true;
+                } else if (line.rfind("gfx_viewbobbing:", 0) == 0) {
+                    lines.push_back("gfx_viewbobbing:0");
+                    foundBobbing = true;
+                } else {
+                    lines.push_back(line);
+                }
+            }
+            inFile.close();
+        }
+
+        if (!foundHideHand) lines.push_back("gfx_hidehand:1");
+        if (!foundFov) lines.push_back("gfx_field_of_view:110.000000");
+        if (!foundBobbing) lines.push_back("gfx_viewbobbing:0");
+
+        std::ofstream outFile(path, std::ios::trunc);
+        if (outFile.is_open()) {
+            for (const auto& l : lines) {
+                outFile << l << "\n";
+            }
+            outFile.close();
+            LOG_JNI("PatchBedrockOptions: applied VR options (FOV=110, hidehand=1, viewbobbing=0) to %s", path.c_str());
+        }
+    }
+}
 
 using NativeKeyHandlerFn = jboolean (*)(JNIEnv*, jobject, jint, jint, jint);
 static NativeKeyHandlerFn g_origKeyHandler = nullptr;
@@ -101,6 +168,34 @@ extern "C" void Bedrock_nativeResize(JNIEnv* env, jobject thiz,
         mcbedvr::xr::InputBridge::Init(mcbedvr::GetJavaVM(), thiz);
         if (mcbedvr::xr::XrContextState() == mcbedvr::xr::XrState::Uninitialized) {
             mcbedvr::xr::Init();
+        }
+
+        jclass actCls = env->GetObjectClass(thiz);
+        if (actCls) {
+            jmethodID getFilesDir = env->GetMethodID(actCls, "getFilesDir", "()Ljava/io/File;");
+            if (getFilesDir) {
+                jobject fileObj = env->CallObjectMethod(thiz, getFilesDir);
+                if (fileObj) {
+                    jclass fileCls = env->GetObjectClass(fileObj);
+                    jmethodID getPath = env->GetMethodID(fileCls, "getAbsolutePath", "()Ljava/lang/String;");
+                    if (getPath) {
+                        jstring pathStr = reinterpret_cast<jstring>(env->CallObjectMethod(fileObj, getPath));
+                        if (pathStr) {
+                            const char* cPath = env->GetStringUTFChars(pathStr, nullptr);
+                            if (cPath) {
+                                mcbedvr::PatchBedrockOptions(cPath);
+                                env->ReleaseStringUTFChars(pathStr, cPath);
+                            }
+                            env->DeleteLocalRef(pathStr);
+                        }
+                    }
+                    env->DeleteLocalRef(fileCls);
+                    env->DeleteLocalRef(fileObj);
+                }
+            } else {
+                env->ExceptionClear();
+            }
+            env->DeleteLocalRef(actCls);
         }
     }
     mcbedvr::xr::BlitEye::SetWindowSize(static_cast<int>(w), static_cast<int>(h));

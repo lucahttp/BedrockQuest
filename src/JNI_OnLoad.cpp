@@ -50,6 +50,9 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* /*reserved*/) {
             mcbedvr::kProjectName,
             mcbedvr::kVersionMajor, mcbedvr::kVersionMinor, mcbedvr::kVersionPatch);
 
+    // Configurar opciones VR en options.txt (FOV=110, hidehand=1, viewbobbing=0)
+    mcbedvr::PatchBedrockOptions(nullptr);
+
     // (1) Diagnóstico: resolver los símbolos Java_* en libminecraftpe.so
     //     para conocer offsets/direcciones. Se loggean siempre, incluso si
     //     A1 luego los "reemplaza" — son útiles para el admin tool de Emilio.

@@ -44,5 +44,6 @@ jboolean Bedrock_nativeKeyHandler(JNIEnv* env, jobject thiz, jint keyCode, jint 
 }
 
 JavaVM* GetJavaVM();
+void PatchBedrockOptions(const char* baseDir = nullptr);
 
 }  // namespace mcbedvr

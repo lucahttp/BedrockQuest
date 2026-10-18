@@ -65,6 +65,10 @@ PicoInputSnapshot s_currentSnapshot{};
 
 LaserHit          s_laserHit{};
 bool              s_prevTouchDown = false;
+XrPosef           s_quadPose = {
+    .orientation = {0.0f, 0.0f, 0.0f, 1.0f},
+    .position = {0.0f, 0.0f, -1.8f}
+};
 
 struct DPadState {
     bool up{false};
@@ -138,10 +142,6 @@ void CheckButton(bool cur, bool prev, int32_t keyCode) {
         DispatchKey(keyCode, cur ? 0 : 1);
     }
 }
-
-#ifndef AKEYCODE_ESCAPE
-constexpr int32_t AKEYCODE_ESCAPE = 111;
-#endif
 
 void DispatchButtonTransitions(const ControllerState& cur, const ControllerState& prev, bool isRightHand) {
     bool isCinema = mcbedvr::xr::GetQuadLayerMode();
@@ -264,22 +264,60 @@ void UpdateLaserAndTouch(const ControllerState& rightHand, const ControllerState
         dx /= len; dy /= len; dz /= len;
     }
 
-    // Intersect with Quad cinema screen at z = -1.8f
-    float t = (-1.8f - pose.position.z) / dz;
-    if (dz < -0.01f && t > 0.0f) {
-        float hitX = pose.position.x + t * dx;
-        float hitY = pose.position.y + t * dy;
+    // Ray-plane intersection with arbitrary Quad pose (s_quadPose)
+    float qqx = s_quadPose.orientation.x;
+    float qqy = s_quadPose.orientation.y;
+    float qqz = s_quadPose.orientation.z;
+    float qqw = s_quadPose.orientation.w;
 
-        // Quad spans [-1.2, 1.2] on X and [-0.6, 0.6] on Y
-        float u = (hitX + 1.2f) / 2.4f;
-        float v = (0.6f - hitY) / 1.2f;
+    // Quad normal (+Z rotated, points toward player front face):
+    float nx = 2.0f * (qqx * qqz + qqy * qqw);
+    float ny = 2.0f * (qqy * qqz - qqx * qqw);
+    float nz = 1.0f - 2.0f * (qqx * qqx + qqy * qqy);
 
-        if (u >= 0.0f && u <= 1.0f && v >= 0.0f && v <= 1.0f) {
-            s_laserHit.is_hit = true;
-            s_laserHit.u = u;
-            s_laserHit.v = v;
-            s_laserHit.pixel_x = u * static_cast<float>(BlitEye::GetWindowWidth());
-            s_laserHit.pixel_y = v * static_cast<float>(BlitEye::GetWindowHeight());
+    // Quad right vector (+X rotated):
+    float ux = 1.0f - 2.0f * (qqy * qqy + qqz * qqz);
+    float uy = 2.0f * (qqx * qqy + qqz * qqw);
+    float uz = 2.0f * (qqx * qqz - qqy * qqw);
+
+    // Quad up vector (+Y rotated):
+    float vx = 2.0f * (qqx * qqy - qqz * qqw);
+    float vy = 1.0f - 2.0f * (qqx * qqx + qqz * qqz);
+    float vz = 2.0f * (qqy * qqz + qqx * qqw);
+
+    float denom = dx * nx + dy * ny + dz * nz;
+    if (denom < -0.01f) {
+        float cx = s_quadPose.position.x;
+        float cy = s_quadPose.position.y;
+        float cz = s_quadPose.position.z;
+
+        float numer = (cx - pose.position.x) * nx +
+                      (cy - pose.position.y) * ny +
+                      (cz - pose.position.z) * nz;
+        float t = numer / denom;
+        if (t > 0.0f) {
+            float hx = pose.position.x + t * dx;
+            float hy = pose.position.y + t * dy;
+            float hz = pose.position.z + t * dz;
+
+            float relX = (hx - cx) * ux + (hy - cy) * uy + (hz - cz) * uz;
+            float relY = (hx - cx) * vx + (hy - cy) * vy + (hz - cz) * vz;
+
+            constexpr float kQuadWidth = 2.4f;
+            constexpr float kQuadHeight = 1.35f;
+
+            float u = (relX + kQuadWidth * 0.5f) / kQuadWidth;
+            float v = (kQuadHeight * 0.5f - relY) / kQuadHeight;
+
+            if (u >= 0.0f && u <= 1.0f && v >= 0.0f && v <= 1.0f) {
+                s_laserHit.is_hit = true;
+                s_laserHit.u = u;
+                s_laserHit.v = v;
+                s_laserHit.pixel_x = u * static_cast<float>(BlitEye::GetWindowWidth());
+                s_laserHit.pixel_y = v * static_cast<float>(BlitEye::GetWindowHeight());
+            } else {
+                s_laserHit.is_hit = false;
+            }
         } else {
             s_laserHit.is_hit = false;
         }
@@ -760,9 +798,9 @@ void PicoInput::SyncActions(XrSession session, XrSpace appSpace, XrTime predicte
             s_prevRightTime = predictedDisplayTime;
         }
 
-        // Right stick turn: manual character turning (QuestCraft)
-        float totalRx = rx;
-        float totalRy = ry;
+        // Right stick turn: manual character turning (QuestCraft) + Head tracking look
+        float totalRx = std::clamp(rx + headYawRate, -1.0f, 1.0f);
+        float totalRy = std::clamp(ry + headPitchRate, -1.0f, 1.0f);
 
         static bool s_wasImmersiveJoyActive = false;
         bool joyActive = (lx != 0.0f || ly != 0.0f || totalRx != 0.0f || totalRy != 0.0f || lt != 0.0f || rt != 0.0f);
@@ -789,6 +827,10 @@ const PicoInputSnapshot& PicoInput::GetSnapshot() {
 
 const LaserHit& PicoInput::GetLaserHit() {
     return s_laserHit;
+}
+
+void PicoInput::SetQuadPose(const XrPosef& pose) {
+    s_quadPose = pose;
 }
 
 void PicoInput::TriggerHaptic(uint32_t hand, float durationSeconds, float frequency, float amplitude) {

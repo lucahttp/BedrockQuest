@@ -39,8 +39,37 @@ jobject              g_app_context{nullptr};
 jobject              g_activity{nullptr};
 std::atomic<XrSessionState> g_session_state{XR_SESSION_STATE_UNKNOWN};
 std::atomic<bool>           g_session_running{false};
-std::atomic<bool>           g_use_quad_layer{false};
+std::atomic<bool>           g_use_quad_layer{true};
 std::atomic<bool>           s_resetTracking{true};
+XrPosef                     s_quadPose = {
+    .orientation = {0.0f, 0.0f, 0.0f, 1.0f},
+    .position = {0.0f, 0.0f, -1.8f}
+};
+
+void RecenterQuadLayer(const XrPosef& hmdPose) {
+    float qx = hmdPose.orientation.x;
+    float qy = hmdPose.orientation.y;
+    float qz = hmdPose.orientation.z;
+    float qw = hmdPose.orientation.w;
+
+    float siny = 2.0f * (qw * qy + qx * qz);
+    float cosy = 1.0f - 2.0f * (qy * qy + qz * qz);
+    float yaw = std::atan2(siny, cosy);
+
+    float fx = -std::sin(yaw);
+    float fz = -std::cos(yaw);
+
+    s_quadPose.position.x = hmdPose.position.x + fx * 1.8f;
+    s_quadPose.position.y = hmdPose.position.y;
+    s_quadPose.position.z = hmdPose.position.z + fz * 1.8f;
+
+    s_quadPose.orientation.x = 0.0f;
+    s_quadPose.orientation.y = std::sin(yaw * 0.5f);
+    s_quadPose.orientation.z = 0.0f;
+    s_quadPose.orientation.w = std::cos(yaw * 0.5f);
+
+    PicoInput::SetQuadPose(s_quadPose);
+}
 
 void PollEvents() {
     if (g_info.instance == XR_NULL_HANDLE) {
@@ -664,12 +693,54 @@ FrameResult XrContextSubmitFrame(const FrameRequest& /*req*/) {
                views[1].fov.angleLeft, views[1].fov.angleRight, views[1].fov.angleUp, views[1].fov.angleDown);
     }
 
+    // Auto-detect menu vs world gameplay from Bedrock's MainActivity.mCursorLocked
+    bool inMenu = true;
+    if (g_activity) {
+        JNIEnv* env = nullptr;
+        JavaVM* vm = mcbedvr::GetJavaVM();
+        if (vm && vm->GetEnv(reinterpret_cast<void**>(&env), JNI_VERSION_1_6) == JNI_OK && env) {
+            static jfieldID s_cursorLockedFid = nullptr;
+            if (!s_cursorLockedFid) {
+                jclass actCls = env->GetObjectClass(g_activity);
+                if (actCls) {
+                    s_cursorLockedFid = env->GetFieldID(actCls, "mCursorLocked", "Z");
+                    env->DeleteLocalRef(actCls);
+                }
+            }
+            if (s_cursorLockedFid) {
+                jboolean isLocked = env->GetBooleanField(g_activity, s_cursorLockedFid);
+                inMenu = (isLocked == JNI_FALSE);
+            }
+        }
+    }
+
+    static bool s_wasInMenu = true;
+    if (inMenu != s_wasInMenu) {
+        s_wasInMenu = inMenu;
+        g_use_quad_layer.store(inMenu);
+        LOG_XR("VR Layer Mode auto-switched by mCursorLocked -> %s",
+               inMenu ? "CINEMA_QUAD (Menu)" : "IMMERSIVE_VR (World)");
+        if (inMenu) {
+            RecenterQuadLayer(views[0].pose);
+        } else {
+            s_resetTracking.store(true);
+        }
+    }
+
     // 6DoF In-Game Head Tracking (QuestCraft Parity)
-    // Extract yaw and pitch from OpenXR HMD pose (views[0].pose.orientation) and feed
-    // rotational deltas directly into Bedrock's camera via DispatchLookDelta.
+    // Extract yaw and pitch angular rate from OpenXR HMD pose (views[0].pose.orientation) and feed
+    // directly into Bedrock's Gamepad Right Stick (AXIS_Z / AXIS_RZ) via PicoInput::SyncActions.
     static float s_lastYaw = 0.0f;
     static float s_lastPitch = 0.0f;
     static bool s_hasLastAngles = false;
+    static auto s_lastTime = std::chrono::steady_clock::now();
+
+    float headYawRate = 0.0f;
+    float headPitchRate = 0.0f;
+
+    auto curTime = std::chrono::steady_clock::now();
+    float dt = std::chrono::duration<float>(curTime - s_lastTime).count();
+    s_lastTime = curTime;
 
     if (s_resetTracking.exchange(false) || g_use_quad_layer.load()) {
         s_hasLastAngles = false;
@@ -691,7 +762,7 @@ FrameResult XrContextSubmitFrame(const FrameRequest& /*req*/) {
             ? std::copysign(static_cast<float>(M_PI) / 2.0f, sinp)
             : std::asin(sinp);
 
-        if (!s_hasLastAngles) {
+        if (!s_hasLastAngles || dt > 0.1f || dt < 0.001f) {
             s_lastYaw = curYaw;
             s_lastPitch = curPitch;
             s_hasLastAngles = true;
@@ -706,8 +777,19 @@ FrameResult XrContextSubmitFrame(const FrameRequest& /*req*/) {
             s_lastYaw = curYaw;
             s_lastPitch = curPitch;
 
-            // In Bedrock, relative mouse delta X rotates yaw, delta Y rotates pitch.
-            // Tuned ~580.0f pixels per radian gives accurate 1:1 real-to-virtual angular tracking.
+            // In Bedrock Gamepad:
+            // AXIS_Z (right stick X): positive turns right.
+            // When turning head to the right: curYaw decreases (dyaw < 0).
+            // So positive rate: -dyaw / dt.
+            // Full stick deflection in Bedrock rotates at approx 3.2 rad/s (~183 deg/s).
+            constexpr float kTurnSpeedMax = 3.2f;
+            headYawRate = (-dyaw / dt) / kTurnSpeedMax;
+            headPitchRate = (-dpitch / dt) / kTurnSpeedMax;
+
+            headYawRate = std::clamp(headYawRate, -1.0f, 1.0f);
+            headPitchRate = std::clamp(headPitchRate, -1.0f, 1.0f);
+
+            // Also dispatch mouse look delta as secondary fallback
             constexpr float kLookSensitivity = 580.0f;
             float dx = -dyaw * kLookSensitivity;
             float dy = -dpitch * kLookSensitivity;
@@ -718,8 +800,8 @@ FrameResult XrContextSubmitFrame(const FrameRequest& /*req*/) {
         }
     }
 
-    // Sync PICO 4 Ultra actions
-    PicoInput::SyncActions(g_info.session, g_info.app_space, fs.predictedDisplayTime);
+    // Sync PICO 4 Ultra actions with head rotation rates
+    PicoInput::SyncActions(g_info.session, g_info.app_space, fs.predictedDisplayTime, headYawRate, headPitchRate);
 
     uint32_t imgIndex[2] = {0, 0};
     bool ok[2] = {false, false};
@@ -798,11 +880,8 @@ FrameResult XrContextSubmitFrame(const FrameRequest& /*req*/) {
             },
             .imageArrayIndex = 0
         },
-        .pose = {
-            .orientation = {0.0f, 0.0f, 0.0f, 1.0f},
-            .position = {0.0f, 0.0f, -1.8f}
-        },
-        .size = {2.4f, 1.2f} // 2:1 aspect ratio matching 4320x2160
+        .pose = s_quadPose,
+        .size = {2.4f, 1.35f} // 16:9 aspect ratio matching 1920x1080 / 4320x2160
     };
 
     const XrCompositionLayerBaseHeader* layers[1] = {

@@ -104,10 +104,15 @@
 | **T24** | 3D Tracked Minecraft Arms & Reticle Gating (`BlitEye.cpp`) | High | **DONE** | Implemented 3D shaded Steve voxel arms anchored to 6DoF controller poses with stereoscopic View-Projection matrices; hid laser pointer in immersive mode. |
 | **T25** | 6DoF View Projection & Camera Calibration (`XrContext.cpp`) | High | **DONE** | Defaulted to 360 Immersive VR projection (`g_use_quad_layer{false}`), eliminated double-rotation conflicts, retained Y-button/dual-grip cinema toggle. |
 | **T26** | Build, Repack 1GB Modern Bedrock APK, Sign, Deploy & Test on PICO 4 Ultra | Critical | **DONE** | Successfully built `libmcbedvr.so`, repacked genuine ~1GB 64-bit Bedrock v1.26.52.3 APK, signed (v3 scheme), installed to PICO 4 Ultra, verified 90 FPS OpenXR stereoscopic rendering in logcat. |
+| **T27** | Head Tracking Camera Look via Gamepad Right Stick (`AXIS_Z`/`AXIS_RZ`) | Critical | **DONE** | Map HMD angular velocity (`headYawRate`, `headPitchRate`) directly into Bedrock's Gamepad Right Stick via `InputBridge::DispatchJoystick` to bypass Android pointer capture restrictions. |
+| **T28** | Auto Menu Detection & Floating Quad Panel (`mCursorLocked`) | Critical | **DONE** | Hook `mCursorLocked` from `MainActivity`: dynamically switch between floating Quad panel at 1.8m gaze (menus, inventory, settings, start screen) with laser pointer, and 360° projection (gameplay). |
+| **T29** | 3D Laser Pointer Ray-Plane Intersection on Dynamic Quad | High | **DONE** | Support rotated and translated Quad poses in `PicoInput::UpdateLaserAndTouch` so menus can open in any gaze direction. |
+| **T30** | Wide VR FOV (110°) Injection (`gfx_field_of_view:110.0`) | High | **DONE** | Auto-patch Bedrock `options.txt` at startup to eliminate cramped/magnified first-person view. |
+| **T31** | Suppress Vanilla Hand Model (`gfx_hidehand:1`) | High | **DONE** | Auto-patch Bedrock `options.txt` at startup so only 3D tracked Steve voxel arms render. |
 
 ---
 
 ## 4. Next Steps & Current State
 
-1. **User Testing on Headset**: Have user put on the PICO 4 Ultra visor to experience immediate 360 6DoF immersion with 3D Steve voxel arms, QuestCraft locomotion, swing mining, and wrist inventory.
-2. **Phase 3 Parallax Refinement**: Hook Bedrock's in-game `LevelRendererCamera::render` or dual-pass matrix for per-eye stereoscopic disparity inside the block voxel world.
+1. **User Testing on Headset**: Conectar el PICO 4 Ultra e instalar el APK generado (`/Volumes/X10Pro/Downloads/minecraft_vr_v6_signed.apk`).
+2. Probar los 5 puntos en el visor: giro de cabeza fluido en gameplay, menús flotantes a 1.8m con puntero láser (inicio e inventario), FOV ancho a 110°, y brazos 3D de Steve exclusivos.

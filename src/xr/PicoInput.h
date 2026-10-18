@@ -41,6 +41,7 @@ public:
                             float headYawRate = 0.0f, float headPitchRate = 0.0f);
     static const PicoInputSnapshot& GetSnapshot();
     static const LaserHit& GetLaserHit();
+    static void SetQuadPose(const XrPosef& pose);
     static void TriggerHaptic(uint32_t hand, float durationSeconds, float frequency, float amplitude);
 };
 
