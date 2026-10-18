@@ -15,7 +15,7 @@ constexpr int kVersionMajor = 0;
 constexpr int kVersionMinor = 1;
 constexpr int kVersionPatch = 0;
 
-constexpr const char* kProjectName = "mcbedvr";
+constexpr const char* kProjectName = "bedrockquest";
 
 // Target por defecto: nombre del módulo inyectable. Si Mojang renombra la
 // .so en una futura build, sólo hay que cambiar esto.

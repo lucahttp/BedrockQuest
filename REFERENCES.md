@@ -1,6 +1,6 @@
 # References & Prior Art
 
-The **MCBedVR** project builds upon the foundational research, reverse engineering, and open-source contributions of several groundbreaking projects in the standalone VR and Minecraft communities.
+The **BedrockQuest** project builds upon the foundational research, reverse engineering, and open-source contributions of several groundbreaking projects in the standalone VR and Minecraft communities.
 
 ---
 
@@ -9,7 +9,7 @@ The **MCBedVR** project builds upon the foundational research, reverse engineeri
 ### 1.1 QuestCraft
 * **Repository:** [QuestCraftPlusPlus/QuestCraft](https://github.com/QuestCraftPlusPlus/QuestCraft)
 * **License:** GPL-3.0
-* **Contributions & Influence on MCBedVR:**
+* **Contributions & Influence on BedrockQuest:**
   * **Controls Paradigm:** Exact control mapping parity (locomotion on left stick, turning on right stick, sneak on stick click, sprint on stick click, jump on A, inventory on Y).
   * **Diegetic Wrist Gesture:** Looking at the player's left wrist (watch position) triggers the inventory toggle without needing a controller button.
   * **Physical Swing Mining:** Forward/downward physical hand velocity gestures triggering attack and mining actions with haptic impact feedback.
@@ -18,7 +18,7 @@ The **MCBedVR** project builds upon the foundational research, reverse engineeri
 ### 1.2 GTA: San Andreas VR for Oculus Quest (`libsavr.so`)
 * **Author:** Dubrovskiy Yevhen (Stakelogic)
 * **Repository:** [dubrovskiy-yevhen-stakelogic/gta-sa-vr-quest](https://github.com/dubrovskiy-yevhen-stakelogic/gta-sa-vr-quest)
-* **Contributions & Influence on MCBedVR:**
+* **Contributions & Influence on BedrockQuest:**
   * **JNI `RegisterNatives` Batch Replacement:** Demonstrates that overriding Java native methods via standard ART `env->RegisterNatives` is cleaner, safer, and more stable than binary function hooking (`.text` patching). Completely avoids SELinux policy violations and `W⊕X` memory protection faults on Android 10+.
   * **OpenXR Swapchain Management:** Multi-buffered stereo swapchains (`XR_TYPE_SWAPCHAIN_IMAGE_OPENGL_ES_KHR`) rendered via OpenGL ES blit buffers.
   * **Decoupled Aiming & Head Look:** Separating camera rotation from weapon/tool orientation in 6DoF space.
@@ -26,7 +26,7 @@ The **MCBedVR** project builds upon the foundational research, reverse engineeri
 ### 1.3 Red Dead Redemption 1 VR for Quest
 * **Author:** Dubrovskiy Yevhen (Stakelogic)
 * **Repository:** [dubrovskiy-yevhen-stakelogic/rdr1-quest](https://github.com/dubrovskiy-yevhen-stakelogic/rdr1-quest)
-* **Contributions & Influence on MCBedVR:**
+* **Contributions & Influence on BedrockQuest:**
   * Viewport dimensioning and render target capture.
   * Diegetic HUD anchoring techniques in standalone mobile OpenXR.
 
@@ -39,7 +39,7 @@ The **MCBedVR** project builds upon the foundational research, reverse engineeri
   * [minecraft-linux/mcpelauncher-manifest](https://github.com/minecraft-linux/mcpelauncher-manifest)
   * [minecraft-linux/mcpelauncher-extract](https://github.com/minecraft-linux/mcpelauncher-extract)
   * [minecraft-linux/macos-builder](https://github.com/minecraft-linux/macos-builder)
-* **Contributions & Influence on MCBedVR:**
+* **Contributions & Influence on BedrockQuest:**
   * **Symbol Reverse Engineering:** Mapping JNI lifecycle symbols (`Java_com_mojang_minecraftpe_MainActivity_*`), keyboard/mouse handlers, and window resize hooks.
   * **Genuine Google Play Extraction:** Verified methods for downloading and verifying genuine Minecraft Bedrock APK packages directly from Google Play.
 
@@ -83,5 +83,6 @@ The **MCBedVR** project builds upon the foundational research, reverse engineeri
 ## 5. Legal & Fair Use Notice
 
 * Minecraft is a registered trademark of Mojang AB / Microsoft Corporation.
-* MCBedVR is an independent, non-commercial open-source research project not affiliated with, endorsed by, or sponsored by Mojang AB, Microsoft, ByteDance, or Meta.
+* BedrockQuest is an independent, non-commercial open-source research project not affiliated with, endorsed by, or sponsored by Mojang AB, Microsoft, ByteDance, or Meta.
 * This repository contains **NO copyrighted game assets, textures, sounds, or game binaries**. Users must legally purchase Minecraft Bedrock Edition from the Google Play Store to run this software.
+

@@ -1,11 +1,11 @@
-# mcbedvr — Inyector C++ OpenXR sobre Minecraft Bedrock 1.21+ para PICO 4 Ultra.
+# BedrockQuest — Inyector C++ OpenXR sobre Minecraft Bedrock 1.21+ para PICO 4 Ultra.
 # Patrón arquitectónico derivado de gta-sa-vr-quest (Dubrovskiy) — adaptado a Bedrock.
 # Build target: Android ARM64 (arm64-v8a) usando NDK r27 + Khronos OpenXR 1.x headers
 # + OpenXR loader de Khronos. El runtime OpenXR de PICO se inyecta via dlopen del
 # /system/lib64 del visor, NO se enlaza estáticamente.
 
 cmake_minimum_required(VERSION 3.22)
-project(mcbedvr
+project(BedrockQuest
     VERSION 0.1.0
     DESCRIPTION "Minecraft Bedrock 1.21+ standalone VR injector for PICO 4 Ultra"
     LANGUAGES CXX

@@ -30,40 +30,40 @@
     __android_log_print((level), (tag), __VA_ARGS__)
 
 // Tag genérico (subsistema indefinido) — compat hacia atrás.
-#define MCBEDVR_LOG_TAG "mcbedvr"
-#define LOGI(...) MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  MCBEDVR_LOG_TAG, __VA_ARGS__)
-#define LOGW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  MCBEDVR_LOG_TAG, __VA_ARGS__)
-#define LOGE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, MCBEDVR_LOG_TAG, __VA_ARGS__)
+#define BEDROCKQUEST_LOG_TAG "bedrockquest"
+#define LOGI(...) MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  BEDROCKQUEST_LOG_TAG, __VA_ARGS__)
+#define LOGW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  BEDROCKQUEST_LOG_TAG, __VA_ARGS__)
+#define LOGE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, BEDROCKQUEST_LOG_TAG, __VA_ARGS__)
 
-// Macros por subsistema — preferir estas para que `adb logcat -s mcbedvr.jni:I`
+// Macros por subsistema — preferir estas para que `adb logcat -s bedrockquest.jni:I`
 // funcione desde el primer boot.
-#define LOG_JNI(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.jni",    __VA_ARGS__)
-#define LOG_JNIW(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.jni",    __VA_ARGS__)
-#define LOG_JNIE(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.jni",    __VA_ARGS__)
+#define LOG_JNI(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.jni",    __VA_ARGS__)
+#define LOG_JNIW(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.jni",    __VA_ARGS__)
+#define LOG_JNIE(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.jni",    __VA_ARGS__)
 
-#define LOG_INPUT(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.input",  __VA_ARGS__)
-#define LOG_INPUTW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.input",  __VA_ARGS__)
-#define LOG_INPUTE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.input",  __VA_ARGS__)
+#define LOG_INPUT(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.input",  __VA_ARGS__)
+#define LOG_INPUTW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.input",  __VA_ARGS__)
+#define LOG_INPUTE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.input",  __VA_ARGS__)
 
-#define LOG_TICK(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.tick",   __VA_ARGS__)
-#define LOG_TICKW(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.tick",   __VA_ARGS__)
-#define LOG_TICKE(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.tick",   __VA_ARGS__)
+#define LOG_TICK(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.tick",   __VA_ARGS__)
+#define LOG_TICKW(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.tick",   __VA_ARGS__)
+#define LOG_TICKE(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.tick",   __VA_ARGS__)
 
-#define LOG_SWAPPY(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.swappy", __VA_ARGS__)
-#define LOG_SWAPPYW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.swappy", __VA_ARGS__)
-#define LOG_SWAPPYE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.swappy", __VA_ARGS__)
+#define LOG_SWAPPY(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.swappy", __VA_ARGS__)
+#define LOG_SWAPPYW(...) MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.swappy", __VA_ARGS__)
+#define LOG_SWAPPYE(...) MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.swappy", __VA_ARGS__)
 
-#define LOG_XR(...)     MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.xr",     __VA_ARGS__)
-#define LOG_XRW(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.xr",     __VA_ARGS__)
-#define LOG_XRE(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.xr",     __VA_ARGS__)
+#define LOG_XR(...)     MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.xr",     __VA_ARGS__)
+#define LOG_XRW(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.xr",     __VA_ARGS__)
+#define LOG_XRE(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.xr",     __VA_ARGS__)
 
-#define LOG_HOOK(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.hook",   __VA_ARGS__)
-#define LOG_HOOKW(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.hook",   __VA_ARGS__)
-#define LOG_HOOKE(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.hook",   __VA_ARGS__)
+#define LOG_HOOK(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.hook",   __VA_ARGS__)
+#define LOG_HOOKW(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.hook",   __VA_ARGS__)
+#define LOG_HOOKE(...)  MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.hook",   __VA_ARGS__)
 
-#define LOG_SYM(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "mcbedvr.sym",    __VA_ARGS__)
-#define LOG_SYMW(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "mcbedvr.sym",    __VA_ARGS__)
-#define LOG_SYME(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "mcbedvr.sym",    __VA_ARGS__)
+#define LOG_SYM(...)    MCBEDVR_LOG_AT_(ANDROID_LOG_INFO,  "bedrockquest.sym",    __VA_ARGS__)
+#define LOG_SYMW(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_WARN,  "bedrockquest.sym",    __VA_ARGS__)
+#define LOG_SYME(...)   MCBEDVR_LOG_AT_(ANDROID_LOG_ERROR, "bedrockquest.sym",    __VA_ARGS__)
 
 #else  // !__ANDROID__ (host/macOS para CI)
 
@@ -91,36 +91,36 @@
 #define ANDROID_LOG_ERROR 6
 #endif
 
-#define LOGI(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr", __VA_ARGS__)
-#define LOGW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr", __VA_ARGS__)
-#define LOGE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr", __VA_ARGS__)
+#define LOGI(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest", __VA_ARGS__)
+#define LOGW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest", __VA_ARGS__)
+#define LOGE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest", __VA_ARGS__)
 
-#define LOG_JNI(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.jni",    __VA_ARGS__)
-#define LOG_JNIW(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.jni",    __VA_ARGS__)
-#define LOG_JNIE(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.jni",    __VA_ARGS__)
+#define LOG_JNI(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.jni",    __VA_ARGS__)
+#define LOG_JNIW(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.jni",    __VA_ARGS__)
+#define LOG_JNIE(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.jni",    __VA_ARGS__)
 
-#define LOG_INPUT(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.input",  __VA_ARGS__)
-#define LOG_INPUTW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.input",  __VA_ARGS__)
-#define LOG_INPUTE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.input",  __VA_ARGS__)
+#define LOG_INPUT(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.input",  __VA_ARGS__)
+#define LOG_INPUTW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.input",  __VA_ARGS__)
+#define LOG_INPUTE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.input",  __VA_ARGS__)
 
-#define LOG_TICK(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.tick",   __VA_ARGS__)
-#define LOG_TICKW(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.tick",   __VA_ARGS__)
-#define LOG_TICKE(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.tick",   __VA_ARGS__)
+#define LOG_TICK(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.tick",   __VA_ARGS__)
+#define LOG_TICKW(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.tick",   __VA_ARGS__)
+#define LOG_TICKE(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.tick",   __VA_ARGS__)
 
-#define LOG_SWAPPY(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.swappy", __VA_ARGS__)
-#define LOG_SWAPPYW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.swappy", __VA_ARGS__)
-#define LOG_SWAPPYE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.swappy", __VA_ARGS__)
+#define LOG_SWAPPY(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.swappy", __VA_ARGS__)
+#define LOG_SWAPPYW(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.swappy", __VA_ARGS__)
+#define LOG_SWAPPYE(...) MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.swappy", __VA_ARGS__)
 
-#define LOG_XR(...)     MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.xr",     __VA_ARGS__)
-#define LOG_XRW(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.xr",     __VA_ARGS__)
-#define LOG_XRE(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.xr",     __VA_ARGS__)
+#define LOG_XR(...)     MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.xr",     __VA_ARGS__)
+#define LOG_XRW(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.xr",     __VA_ARGS__)
+#define LOG_XRE(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.xr",     __VA_ARGS__)
 
-#define LOG_HOOK(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.hook",   __VA_ARGS__)
-#define LOG_HOOKW(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.hook",   __VA_ARGS__)
-#define LOG_HOOKE(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.hook",   __VA_ARGS__)
+#define LOG_HOOK(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.hook",   __VA_ARGS__)
+#define LOG_HOOKW(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.hook",   __VA_ARGS__)
+#define LOG_HOOKE(...)  MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.hook",   __VA_ARGS__)
 
-#define LOG_SYM(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "mcbedvr.sym",    __VA_ARGS__)
-#define LOG_SYMW(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "mcbedvr.sym",    __VA_ARGS__)
-#define LOG_SYME(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "mcbedvr.sym",    __VA_ARGS__)
+#define LOG_SYM(...)    MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_INFO,  "bedrockquest.sym",    __VA_ARGS__)
+#define LOG_SYMW(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_WARN,  "bedrockquest.sym",    __VA_ARGS__)
+#define LOG_SYME(...)   MCBEDVR_LOG_AT_HOST_(ANDROID_LOG_ERROR, "bedrockquest.sym",    __VA_ARGS__)
 
 #endif  // __ANDROID__

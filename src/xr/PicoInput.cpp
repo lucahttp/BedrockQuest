@@ -473,8 +473,8 @@ bool PicoInput::Init(XrInstance instance, XrSession session) {
 
     XrActionSetCreateInfo asci{XR_TYPE_ACTION_SET_CREATE_INFO};
     asci.next = nullptr;
-    std::strncpy(asci.actionSetName, "mcbedvr_input", XR_MAX_ACTION_SET_NAME_SIZE - 1);
-    std::strncpy(asci.localizedActionSetName, "MCBedVR Input", XR_MAX_LOCALIZED_ACTION_SET_NAME_SIZE - 1);
+    std::strncpy(asci.actionSetName, "bedrockquest_input", XR_MAX_ACTION_SET_NAME_SIZE - 1);
+    std::strncpy(asci.localizedActionSetName, "BedrockQuest Input", XR_MAX_LOCALIZED_ACTION_SET_NAME_SIZE - 1);
     asci.priority = 0;
     XrResult r = xrCreateActionSet(instance, &asci, &s_actionSet);
     if (XR_FAILED(r)) {

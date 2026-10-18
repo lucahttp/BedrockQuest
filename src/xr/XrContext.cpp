@@ -220,9 +220,9 @@ bool CreateInstance(JavaVM* vm, jobject context) {
         .next = (vm != nullptr) ? &android_info : nullptr,
         .createFlags = 0,
         .applicationInfo = {
-            .applicationName = "mcbedvr",
+            .applicationName = "BedrockQuest",
             .applicationVersion = 1,
-            .engineName = "mcbedvr",
+            .engineName = "BedrockQuest",
             .engineVersion = 1,
             .apiVersion = XR_CURRENT_API_VERSION,
         },

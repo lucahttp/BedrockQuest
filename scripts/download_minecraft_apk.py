@@ -30,7 +30,7 @@ DEST_APK = os.path.join(DEST_DIR, "minecraft_bedrock.apk")
 def banner():
     print(r"""
 ============================================================
-   MCBedVR: Minecraft Bedrock APK Acquisition Tool
+   BedrockQuest: Minecraft Bedrock APK Acquisition Tool
    Standalone 6DoF OpenXR Injector for PICO 4 Ultra
 ============================================================
 """)
@@ -234,7 +234,7 @@ def method_local(import_path=None):
 def main():
     banner()
 
-    parser = argparse.ArgumentParser(description="MCBedVR APK Preparation Tool")
+    parser = argparse.ArgumentParser(description="BedrockQuest APK Preparation Tool")
     parser.add_argument("--gplay", action="store_true", help="Download from Google Play Store")
     parser.add_argument("--adb", action="store_true", help="Extract from connected ADB device")
     parser.add_argument("--import-apk", dest="import_apk", metavar="PATH", help="Import an existing APK file")

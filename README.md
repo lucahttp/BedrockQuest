@@ -1,4 +1,4 @@
-# MCBedVR: Standalone 6DoF OpenXR Injector for Minecraft Bedrock
+# BedrockQuest: Standalone 6DoF OpenXR Injector for Minecraft Bedrock
 
 [![OpenXR](https://img.shields.io/badge/OpenXR-1.1-blue.svg)](https://www.khronos.org/openxr/)
 [![Platform](https://img.shields.io/badge/Platform-PICO%204%20Ultra%20%2F%20Android%20ARM64-green.svg)](https://www.picoxr.com/)
@@ -6,7 +6,7 @@
 [![Performance](https://img.shields.io/badge/Performance-90%20FPS%20Stereo-orange.svg)]()
 [![License](https://img.shields.io/badge/License-GPL--3.0-purple.svg)](LICENSE)
 
-**MCBedVR** is an open-source, high-performance standalone 6DoF Virtual Reality injector for modern **Minecraft Bedrock Edition** (RenderDragon engine, 64-bit ARM64) on the **PICO 4 Ultra** (Snapdragon XR2 Gen 2 / PICO OS 5.x / Android 14) and OpenXR-compliant Android VR headsets.
+**BedrockQuest** is an open-source, high-performance standalone 6DoF Virtual Reality injector for modern **Minecraft Bedrock Edition** (RenderDragon engine, 64-bit ARM64) on the **PICO 4 Ultra** (Snapdragon XR2 Gen 2 / PICO OS 5.x / Android 14) and OpenXR-compliant Android VR headsets.
 
 It delivers full **QuestCraft control parity** and 6DoF immersion: natural 1:1 head tracking, 3D tracked Steve voxel arms anchored to physical controllers, physical swing mining with haptic impact, diegetic wrist inventory gestures, and floating spatial menu panels with anti-aliased laser pointer interaction.
 
@@ -60,7 +60,7 @@ It delivers full **QuestCraft control parity** and 6DoF immersion: natural 1:1 h
    └── lib/arm64-v8a/libminecraftpe.so (RenderDragon)
                │
                ▼
-       [ libmcbedvr.so ] (Standalone OpenXR Injector)
+     [ libmcbedvr.so ] (BedrockQuest Standalone OpenXR Injector)
    ┌───────────┴─────────────────────────────────────────────┐
    ▼                                                         ▼
 [ 1. Lifecycle & Input Bridge ]             [ 2. RenderDragon Interception ]
@@ -79,10 +79,10 @@ It delivers full **QuestCraft control parity** and 6DoF immersion: natural 1:1 h
 ```
 
 ### Clean JNI Batching (Dubrovskiy Architecture)
-Rather than patching `.text` segment instructions in memory (which triggers SELinux policy violations and `W⊕X` crashes on modern Android 14), MCBedVR replaces Java native method bindings cleanly through `env->RegisterNatives` during `JNI_OnLoad`.
+Rather than patching `.text` segment instructions in memory (which triggers SELinux policy violations and `W⊕X` crashes on modern Android 14), BedrockQuest replaces Java native method bindings cleanly through `env->RegisterNatives` during `JNI_OnLoad`.
 
 ### Non-Invasive Frame Pacing Interception
-RenderDragon paces its rendering loop via Google AGDK's `libswappy.so`. MCBedVR registers a tracer callback via `SwappyGL_injectTracer`, capturing rendered framebuffers at the API boundary immediately before display presentation.
+RenderDragon paces its rendering loop via Google AGDK's `libswappy.so`. BedrockQuest registers a tracer callback via `SwappyGL_injectTracer`, capturing rendered framebuffers at the API boundary immediately before display presentation.
 
 ---
 
@@ -106,8 +106,8 @@ RenderDragon paces its rendering loop via Google AGDK's `libswappy.so`. MCBedVR 
 
 ### Step 1: Clone Repository
 ```bash
-git clone --recurse-submodules https://github.com/your-username/mcbedvr.git
-cd mcbedvr
+git clone --recurse-submodules https://github.com/lucahttp/BedrockQuest.git
+cd BedrockQuest
 ```
 
 ### Step 2: Acquire Legitimate Minecraft Bedrock APK
@@ -161,4 +161,4 @@ For complete architectural notes, deep-links, and citation details, see [REFEREN
 
 The injector code and build tooling in this repository are licensed under the **GNU General Public License v3.0 (GPL-3.0)**. See [LICENSE](LICENSE) for details.
 
-*Disclaimer: Minecraft is a registered trademark of Mojang AB / Microsoft Corporation. MCBedVR is an independent open-source project and is not affiliated with, endorsed by, or connected to Mojang AB, Microsoft, ByteDance, or Meta.*
+*Disclaimer: Minecraft is a registered trademark of Mojang AB / Microsoft Corporation. BedrockQuest is an independent open-source project and is not affiliated with, endorsed by, or connected to Mojang AB, Microsoft, ByteDance, or Meta.*

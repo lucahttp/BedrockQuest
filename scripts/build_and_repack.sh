@@ -25,7 +25,7 @@ if [[ -z "${BASE_APK}" ]]; then
 fi
 
 if [[ -z "${BASE_APK}" || ! -f "${BASE_APK}" ]]; then
-    echo "[mcbedvr] ERROR: Base Minecraft Bedrock APK not found!"
+    echo "[bedrockquest] ERROR: Base Minecraft Bedrock APK not found!"
     echo "Please download your legally purchased Minecraft APK using:"
     echo "  python3 scripts/download_minecraft_apk.py"
     echo "Or specify the path manually:"
@@ -33,7 +33,7 @@ if [[ -z "${BASE_APK}" || ! -f "${BASE_APK}" ]]; then
     exit 1
 fi
 
-echo "[mcbedvr] Using Base Minecraft APK: ${BASE_APK}"
+echo "[bedrockquest] Using Base Minecraft APK: ${BASE_APK}"
 
 # 1. Locate Android build-tools (zipalign, apksigner)
 ZIPALIGN=""
@@ -60,15 +60,15 @@ if [[ -z "${APKSIGNER}" ]]; then
 fi
 
 if [[ -z "${ZIPALIGN}" || -z "${APKSIGNER}" ]]; then
-    echo "[mcbedvr] ERROR: zipalign or apksigner not found. Set ANDROID_HOME or install Android build-tools."
+    echo "[bedrockquest] ERROR: zipalign or apksigner not found. Set ANDROID_HOME or install Android build-tools."
     exit 1
 fi
 
 # 2. Ensure self-signed dev keystore exists
-KEYSTORE="${PROJECT_ROOT}/build/mcbedvr_dev.keystore"
+KEYSTORE="${PROJECT_ROOT}/build/bedrockquest_dev.keystore"
 mkdir -p "${PROJECT_ROOT}/build"
 if [[ ! -f "${KEYSTORE}" ]]; then
-    echo "[mcbedvr] Generating self-signed debug keystore..."
+    echo "[bedrockquest] Generating self-signed debug keystore..."
     keytool -genkey -v -keystore "${KEYSTORE}" \
         -alias androiddebugkey \
         -storepass android \
@@ -76,27 +76,27 @@ if [[ ! -f "${KEYSTORE}" ]]; then
         -keyalg RSA \
         -keysize 2048 \
         -validity 10000 \
-        -dname "CN=MCBedVR Debug,O=MCBedVR,C=US"
+        -dname "CN=BedrockQuest Debug,O=BedrockQuest,C=US"
 fi
 
-echo "[mcbedvr] 1/7: Building libmcbedvr.so (arm64-v8a)..."
+echo "[bedrockquest] 1/7: Building libmcbedvr.so (arm64-v8a)..."
 "${PROJECT_ROOT}/scripts/build_android_arm64.sh"
 
-echo "[mcbedvr] 2/7: Generating PICO OpenXR IMMERSIVE manifest..."
+echo "[bedrockquest] 2/7: Generating PICO OpenXR IMMERSIVE manifest..."
 cargo build --release --manifest-path "${PROJECT_ROOT}/tools/pvr_manifest/Cargo.toml"
 "${PROJECT_ROOT}/tools/pvr_manifest/target/release/pvr_manifest" \
     "${BASE_APK}" \
     "${PROJECT_ROOT}/build/AndroidManifest.pvr.xml"
 
-echo "[mcbedvr] 3/7: Repacking APK with python3..."
+echo "[bedrockquest] 3/7: Repacking APK with python3..."
 python3 "${PROJECT_ROOT}/scripts/repack.py" "${BASE_APK}"
 
-echo "[mcbedvr] 4/7: Zipaligning APK..."
+echo "[bedrockquest] 4/7: Zipaligning APK..."
 "${ZIPALIGN}" -p -f 4 \
     "${PROJECT_ROOT}/build/_repack/minecraft_vr.apk" \
     "${PROJECT_ROOT}/build/_repack/minecraft_vr_aligned.apk"
 
-echo "[mcbedvr] 5/7: Signing APK..."
+echo "[bedrockquest] 5/7: Signing APK..."
 "${APKSIGNER}" sign \
     --ks "${KEYSTORE}" \
     --ks-pass pass:android \
@@ -104,11 +104,11 @@ echo "[mcbedvr] 5/7: Signing APK..."
     --out "${PROJECT_ROOT}/build/_repack/minecraft_vr_signed.apk" \
     "${PROJECT_ROOT}/build/_repack/minecraft_vr_aligned.apk"
 
-echo "[mcbedvr] 6/7: Verifying signed APK..."
+echo "[bedrockquest] 6/7: Verifying signed APK..."
 "${APKSIGNER}" verify \
     "${PROJECT_ROOT}/build/_repack/minecraft_vr_signed.apk"
 
-echo "[mcbedvr] 7/7: Exporting signed APK..."
+echo "[bedrockquest] 7/7: Exporting signed APK..."
 mkdir -p "${PROJECT_ROOT}/dist"
 cp -f "${PROJECT_ROOT}/build/_repack/minecraft_vr_signed.apk" \
     "${PROJECT_ROOT}/dist/minecraft_vr_signed.apk"
@@ -120,9 +120,10 @@ fi
 
 echo ""
 echo "============================================================"
-echo "[mcbedvr] SUCCESS! Standalone 6DoF VR APK ready:"
+echo "[bedrockquest] SUCCESS! Standalone 6DoF VR APK ready:"
 echo "  ${PROJECT_ROOT}/dist/minecraft_vr_signed.apk"
 echo ""
 echo "To install on your PICO 4 Ultra:"
 echo "  adb install -r ${PROJECT_ROOT}/dist/minecraft_vr_signed.apk"
 echo "============================================================"
+
