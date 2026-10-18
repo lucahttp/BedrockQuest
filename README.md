@@ -8,6 +8,9 @@
 
 **BedrockQuest** is an open-source, high-performance standalone 6DoF Virtual Reality injector for modern **Minecraft Bedrock Edition** (RenderDragon engine, 64-bit ARM64) on the **PICO 4 Ultra** (Snapdragon XR2 Gen 2 / PICO OS 5.x / Android 14) and OpenXR-compliant Android VR headsets.
 
+<img width="1920" height="1920" alt="minecraft_screenshot_latest" src="https://github.com/user-attachments/assets/804a555f-04ea-440b-a2a0-5680de7d22e0" />
+
+
 It delivers full **QuestCraft control parity** and 6DoF immersion: natural 1:1 head tracking, 3D tracked Steve voxel arms anchored to physical controllers, physical swing mining with haptic impact, diegetic wrist inventory gestures, and floating spatial menu panels with anti-aliased laser pointer interaction.
 
 ---
