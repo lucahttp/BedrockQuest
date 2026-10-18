@@ -1,0 +1,134 @@
+{
+  "MinecraftGame": {
+    "description": "engine core class",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2342d40",
+    "unique_xrefs": 2,
+    "first_10_xrefs": [
+      {
+        "adrp_pc": "0x98f6c10",
+        "ref_insn_pc": "0x98f6c14",
+        "str_addr": "0x2342d40",
+        "pattern": "adrp X1,0x2342000; add X1,X1,#0xd40"
+      },
+      {
+        "adrp_pc": "0x98f6d04",
+        "ref_insn_pc": "0x98f6d08",
+        "str_addr": "0x236ae43",
+        "pattern": "adrp X1,0x236a000; add X1,X1,#0xe43"
+      }
+    ]
+  },
+  "setRenderingSize": {
+    "description": "App::* equivalent (Fase 2 target)",
+    "rodata_occurrences": 2,
+    "first_rodata": "0x2c017c0",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "AppPlatform": {
+    "description": "App::* equivalent",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2452242",
+    "unique_xrefs": 1,
+    "first_10_xrefs": [
+      {
+        "adrp_pc": "0xb9694b8",
+        "ref_insn_pc": "0xb9694bc",
+        "str_addr": "0x2452242",
+        "pattern": "adrp X1,0x2452000; add X1,X1,#0x242"
+      }
+    ]
+  },
+  "LevelRenderer": {
+    "description": "render hook target",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2393f22",
+    "unique_xrefs": 1,
+    "first_10_xrefs": [
+      {
+        "adrp_pc": "0x111a4f44",
+        "ref_insn_pc": "0x111a4f48",
+        "str_addr": "0x2563d82",
+        "pattern": "adrp X1,0x2563000; add X1,X1,#0xd82"
+      }
+    ]
+  },
+  "RenderContext": {
+    "description": "render hook target",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2320253",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "RenderDragon": {
+    "description": "render subsystem",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2333fdb",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "TextureAtlas": {
+    "description": "render data",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x2485344",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "FrameBuffer": {
+    "description": "render target",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x25d4fc4",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "onSurfaceChanged": {
+    "description": "EGL/Vulkan surface callback",
+    "rodata_occurrences": 1,
+    "first_rodata": "0x24229ba",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "onSurfaceCreated": {
+    "description": "EGL/Vulkan surface callback",
+    "rodata_occurrences": 1,
+    "first_rodata": "0x238ab72",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "VertexBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 5,
+    "first_rodata": "0x24f2bed",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "GameControllerManager": {
+    "description": "input target",
+    "rodata_occurrences": 2,
+    "first_rodata": "0x35f9c8e",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  },
+  "GpuBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x25e7099",
+    "unique_xrefs": 1,
+    "first_10_xrefs": [
+      {
+        "adrp_pc": "0xa6153a8",
+        "ref_insn_pc": "0xa6153ac",
+        "str_addr": "0x25e7099",
+        "pattern": "adrp X0,0x25e7000; add X0,X0,#0x99"
+      }
+    ]
+  },
+  "CommandBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 4,
+    "first_rodata": "0x251de24",
+    "unique_xrefs": 0,
+    "first_10_xrefs": []
+  }
+}

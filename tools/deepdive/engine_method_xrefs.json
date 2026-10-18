@@ -1,0 +1,9 @@
+{
+  "MinecraftGame::init && MinecraftGame::setSize!\n": {
+    "str_vaddr": "0x250030e",
+    "xref_pcs": [
+      "0x8534534"
+    ],
+    "xref_count": 1
+  }
+}

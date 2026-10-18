@@ -1,0 +1,21 @@
+{
+  "version": "1.26.52.3-final-mod2_sdk",
+  "binary": "libminecraftpe.so",
+  "base_load_offset": 0,
+  "mangled_legacy": {
+    "note": "1.13/1.14 signatures from minecraft-symbols",
+    "present": [],
+    "absent": [
+      "_ZN13MinecraftGameC2Ev",
+      "_ZN13MinecraftGame4tickEv",
+      "_ZN3App16setRenderingSizeEii",
+      "_ZN3App17setUISizeAndScaleEiif",
+      "_ZN3mce8Platform3OGL12InitBindingsEv",
+      "_ZN3mce8Platform3OGL11SwapBuffersEv",
+      "_ZN3mce12RenderContext7presentEv",
+      "_ZN13MinecraftGame11handleInputERK15InputPacketList",
+      "_ZN21GameControllerManager17registerControllerEPKc"
+    ]
+  },
+  "targets": {}
+}

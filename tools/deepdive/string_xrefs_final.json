@@ -1,0 +1,100 @@
+{
+  "MinecraftGame": {
+    "description": "engine core class",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2342d40",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "setRenderingSize": {
+    "description": "App::* equivalent (Fase 2 target)",
+    "rodata_occurrences": 2,
+    "first_rodata": "0x2c017c0",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "AppPlatform": {
+    "description": "App::* equivalent",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2452242",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "LevelRenderer": {
+    "description": "render hook target",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2393f22",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "RenderContext": {
+    "description": "render hook target",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2320253",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "RenderDragon": {
+    "description": "render subsystem",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2333fdb",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "TextureAtlas": {
+    "description": "render data",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x2485344",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "FrameBuffer": {
+    "description": "render target",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x25d4fc4",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "onSurfaceChanged": {
+    "description": "EGL/Vulkan surface callback",
+    "rodata_occurrences": 1,
+    "first_rodata": "0x24229ba",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "onSurfaceCreated": {
+    "description": "EGL/Vulkan surface callback",
+    "rodata_occurrences": 1,
+    "first_rodata": "0x238ab72",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "VertexBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x24f2bed",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "GameControllerManager": {
+    "description": "input target",
+    "rodata_occurrences": 2,
+    "first_rodata": "0x35f9c8e",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "GpuBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x25e7099",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  },
+  "CommandBuffer": {
+    "description": "render data",
+    "rodata_occurrences": 3,
+    "first_rodata": "0x251de24",
+    "unique_xrefs": 0,
+    "first_5_xrefs": []
+  }
+}

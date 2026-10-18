@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "version": "1.26.52.3-final-mod2_sdk",
+    "binary": "/tmp/mcbedvr_rea/libminecraftpe.so",
+    "binary_size_mb": 328.4,
+    "architecture": "aarch64",
+    "link_type": "dynamically linked, stripped",
+    "tools": [
+      "lief 1.0.0 (ELF parsing)",
+      "capstone 5.0.7 (ARM64 disassembly)",
+      "Python 3.9.6"
+    ],
+    "analysis_date": "2026-10-10",
+    "method": "Symbolless REA: ELF section parsing, JNI export cataloging, ADRP+ADD/LDR precomputed-index string cross-reference scan, BL target reverse-xref map, jump-table identification."
+  },
+  "section_layout": {
+    ".text": {
+      "vaddr": "0x64c64e0",
+      "size_kb": 201003
+    },
+    ".rodata": {
+      "vaddr": "0x2311800",
+      "size_kb": 19955
+    },
+    ".dynsym": {
+      "count": 90653,
+      "unique_objects": 87152
+    },
+    "note": "Vaddr/Section info from lief. Text at 0x64c64e0 = 200 MB of stripped ARM64 code; .rodata at 0x2311800 = 20 MB of debug strings, diagnostic messages, and lambda typeinfo names."
+  },
+  "jni_surface": {
+    "total_exports": 95,
+    "mojang_jni_exports": 67,
+    "groups": {
+      "MainActivity": 36,
+      "store_NativeStoreListener": 10,
+      "input_JellyBeanDeviceManager": 8,
+      "idp_util_HttpCall": 7,
+      "idp_interop_XboxLiveAppConfig": 7,
+      "browser_BrowserLaunchActivity": 4,
+      "WorldRecovery": 3,
+      "SwappyDisplayManager": 2,
+      "androidjava_PresenceManager": 2,
+      "Webview_MinecraftWebview": 2,
+      "BatteryMonitor": 2,
+      "NotificationListenerService": 1,
+      "NetworkMonitor": 1,
+      "ThermalMonitor": 1,
+      "AppExitInfoHelper": 1,
+      "CrashManager": 1,
+      "FilePickerManager": 1,
+      "GameActivity": 1,
+      "ChoreographerCallback": 1,
+      "logging_XalLogger": 1
+    },
+    "lifecycle_jnis": {
+      "Java_com_mojang_minecraftpe_MainActivity_nativeResize": "0x852e348",
+      "Java_com_mojang_minecraftpe_MainActivity_nativeSuspend": "0x852e344",
+      "Java_com_mojang_minecraftpe_MainActivity_nativeSuspendGameplayUpdates": "0x852e328",
+      "Java_com_mojang_minecraftpe_MainActivity_nativeStopThis": "0x852e340",
+      "Java_com_mojang_minecraftpe_MainActivity_nativeOnDestroy": "0x852e33c",
+      "Java_com_mojang_minecraftpe_MainActivity_nativeSetHeadphonesConnected": "0x110b7e74",
+      "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceAddedNative": "0x85326ec",
+      "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setControllerDetailsNative": "0x85328b8"
+    },
+    "note": "All 5 MainActivity lifecycle exports (nativeResize, nativeSuspend, nativeSuspendGameplayUpdates, nativeStopThis, nativeOnDestroy) at 0x852e328-0x852e348 share an identical 3-call dispatcher prologue: bl 0xe496620 \u2192 bl 0xe496624 \u2192 bl 0xe4a2214. This is the canonical AppPlatform lifecycle path \u2014 all 5 JNI exports funnel through the same 3 jump tables before reaching engine code."
+  },
+  "legacy_mangled_status": {
+    "method": "nm -D --defined-only",
+    "candidate_count": 9,
+    "present_count": 0,
+    "missing": [
+      "_ZN13MinecraftGameC2Ev",
+      "_ZN13MinecraftGame4tickEv",
+      "_ZN3App16setRenderingSizeEii",
+      "_ZN3App17setUISizeAndScaleEiif",
+      "_ZN3mce8Platform3OGL12InitBindingsEv",
+      "_ZN3mce8Platform3OGL11SwapBuffersEv",
+      "_ZN3mce12RenderContext7presentEv",
+      "_ZN13MinecraftGame11handleInputERK15InputPacketList",
+      "_ZN21GameControllerManager17registerControllerEPKc"
+    ],
+    "conclusion": "All 9 mangled names from minecraft-symbols 1.13/1.14 are absent from libminecraftpe.so 1.26.52.3 dynsym. Mojang switched to hidden-visibility compile flags between 1.16 (RenderDragon intro) and 1.26 \u2014 the engine classes no longer appear in dynsym, but their string identifiers DO remain in .rodata (MinecraftGame 838 occurrences, RenderContext 818, LevelRenderer 129, AppPlatform 101, setRenderingSize 2, RenderDragon 23)."
+  },
+  "jump_tables": {
+    "lifecycle_dispatchers": {
+      "0xe496620": {
+        "size": "128 entries (4-byte B instructions)",
+        "type": "branch table indexed by lifecycle event",
+        "non_jni_callers": 1303,
+        "notes": "Called from 0x64c98c4 which loads function pointer from [x20 + x22*8 + 0x18] then branches via table[event_code]."
+      },
+      "0xe496624": {
+        "size": "128 entries",
+        "type": "branch table (paired with 0xe496620)",
+        "non_jni_callers": 2036,
+        "notes": "Parallel dispatch for second lifecycle phase."
+      },
+      "0xe4a2214": {
+        "size": "128 entries",
+        "type": "branch table (third lifecycle phase)",
+        "non_jni_callers": 304,
+        "notes": "Called from 0x6d5ba18 alongside ldr [x23,#0x48] + add #0xb0 \u2014 loads AppPlatform* from this->vtable[0x48]+0xb0, then calls into this table."
+      }
+    },
+    "input_dispatchers": {
+      "0xe49ebb0": {
+        "size": "128+ entries",
+        "type": "severity/input dispatcher",
+        "non_jni_callers": 222,
+        "notes": "Branch table indexed by severity code (5 \u2192 0x12920150, etc). The 0x8534534 code calls this with (severity=5, 'Minecraft', 'MinecraftGame::init && MinecraftGame::setSize!') \u2014 this is the assertion/log dispatcher, not a direct hook target."
+      }
+    },
+    "real_engine_code_region": {
+      "vaddr_range": "0x12900000-0x12a00000",
+      "note": "All jump table entries (0xe496620, 0xe496624, 0xe4a2214, 0xe49ebb0) point into 0x12900000-0x12a00000 \u2014 this is where the actual engine lifecycle handlers, setRenderingSize, tick, render-loop code live. To hook these we need to (a) disassemble specific table entries once we know which event/slot triggers setSize, and (b) trace the chain from Java_* JNI exports through the jump tables into that region."
+    }
+  },
+  "engine_strings_evidence": {
+    "method": "Binary search for substrings in .rodata, then ADRP+ADD/LDR precomputed-index scan over .text to find which code references those substrings. Index built once (8.9s, 9628 pages, 1.6M ADRPs), lookup O(1) per string.",
+    "key_findings": [
+      {
+        "substring": "MinecraftGame::init && MinecraftGame::setSize!",
+        "str_vaddr": "0x250030e",
+        "xref_pc": "0x8534534",
+        "context": "Function at 0x8534534 calls LogAssert (via 0xe49ebb0) with severity=5, tag='Minecraft', msg=this substring. This is an assertion in the MinecraftGame::setSize() path \u2014 implies setSize() was called before init()."
+      },
+      {
+        "substring": "MinecraftGame::startFrame()",
+        "str_vaddr": "0x25273fe",
+        "xref_pc": "0 (no ADRP+ADD/LDR cross-reference found in .text)",
+        "context": "Likely used as typeinfo name or exception message; not directly addressable via symbol lookup. Exists in .rodata but compiler emits references through indirect means (possibly exception tables, .gcc_except_table)."
+      },
+      {
+        "substring": "setRenderingSizeEiiE3$_0",
+        "str_vaddr": "0x2c017c0",
+        "xref_pc": "0 (no ADRP+ADD/LDR cross-reference found)",
+        "context": "This is the typeinfo name of the lambda created inside setRenderingSize(int,int). Its presence CONFIRMS App::setRenderingSize(int,int) exists as a function in the binary, even though the mangled symbol _ZN3App16setRenderingSizeEii is absent from dynsym. The lambda address is held in the AppPlatform vtable."
+      },
+      {
+        "substring": "AppPlatform::initialize()",
+        "str_vaddr": "0x264482b",
+        "xref_pc": "0 (no direct ADRP+ADD/LDR xref)",
+        "context": "Engine bootstrap method; called once at startup."
+      },
+      {
+        "substring": "AppPlatform",
+        "str_vaddr": "0x2452242",
+        "xref_pc": "0xb9694b8",
+        "context": "Function at 0xb9694b8 references 'AppPlatform' (11 bytes) and calls 0x129118d0 / 0x12911a90 / 0x1290e3a8 / 0x1290a19c \u2014 all in the engine code region. This is a likely AppPlatform teardown/disposal function (freeing linked-list nodes)."
+      },
+      {
+        "substring": "MinecraftGame",
+        "str_vaddr": "0x2342d40",
+        "xref_pc": "0x98f6c10",
+        "context": "Function 0x98f6c10 is a MinecraftGame factory: it copies 'MinecraftGame'+27 bytes (likely 'MinecraftGame::init' or qualified type) to stack, calls e4c2a7c (memcpy), then e4c2864 (factory helper), then e496718 (jump table entry in 0xe496620 \u2014 slot 9), then stores the result into [x19,#0x15f8]. x19 is likely the AppPlatform singleton; offset 0x15f8 is the MinecraftGame pointer field."
+      },
+      {
+        "substring": "LevelRenderer",
+        "str_vaddr": "0x2563d82",
+        "xref_pc": "0x111a4f44",
+        "context": "Function references 'LevelRenderer' string."
+      },
+      {
+        "substring": "GpuBuffer",
+        "str_vaddr": "0x25e7099",
+        "xref_pc": "0xa6153a8",
+        "context": "Function references 'GpuBuffer' string."
+      },
+      {
+        "substring": "onSurfaceChangedNative",
+        "str_vaddr": "0x24229ba",
+        "xref_pc": "0 (no ADRP+ADD/LDR xref found)",
+        "context": "JNI bridge callback name. The actual JNI export is Java_com_mojang_minecraftpe_MainActivity_nativeResize at 0x852e348 \u2014 the C++ side delegates into the engine through the onSurfaceChangedNative path."
+      },
+      {
+        "substring": "onSurfaceCreatedNative",
+        "str_vaddr": "0x238ab72",
+        "xref_pc": "0 (no ADRP+ADD/LDR xref found)",
+        "context": "JNI bridge callback for surface creation."
+      }
+    ]
+  },
+  "resolved_symbols_for_mcbedvr": {
+    "note": "These are the addresses that can be hooked from mcbedvr's ResolveGameSymbols() given the current evidence. Marked 'confirmed' if verified via multiple sources; 'candidate' if single-source.",
+    "MinecraftGame_ctor": {
+      "status": "candidate",
+      "vaddr": "0x98f6c10",
+      "evidence": "Factory/init function referencing 'MinecraftGame' string at 0x2342d40 + 27 bytes. Calls operator new(0xf0) and stores into [x19, #0x15f8]."
+    },
+    "MinecraftGame_tick": {
+      "status": "candidate",
+      "vaddr": "unknown",
+      "evidence": "MinecraftGame::onTick() and MinecraftGame::update() strings exist at 0x23d9e1f and 0x2494807 but no direct ADRP+ADD/LDR xref found. Likely called through jump table 0xe496620 entry that needs further tracing."
+    },
+    "App_setRenderingSize": {
+      "status": "candidate",
+      "vaddr": "unknown (via lambda typeinfo name at 0x2c017c0)",
+      "evidence": "Lambda typeinfo name 'setRenderingSizeEiiE3$_0' at 0x2c017c0 confirms the function exists in the binary. Recommended hook point: the jump table entry in 0xe496620 that the 5 lifecycle JNIs funnel through, OR nativeResize (0x852e348) as a JNI-side trampoline."
+    },
+    "App_setUISizeAndScale": {
+      "status": "not found",
+      "vaddr": null,
+      "evidence": "No occurrences in .rodata; function may be inlined or removed."
+    },
+    "mce_Platform_OGL_InitBindings": {
+      "status": "not found",
+      "vaddr": null,
+      "evidence": "No 'mce::' substrings in .rodata. RenderDragon (1.16+) replaced mce::Platform::OGL with RenderDragonInternal."
+    },
+    "mce_Platform_OGL_SwapBuffers": {
+      "status": "not found",
+      "vaddr": null,
+      "evidence": "Same as above; RenderDragon swap is internal."
+    },
+    "mce_RenderContext_present": {
+      "status": "not found",
+      "vaddr": null,
+      "evidence": "Replaced by RenderDragon rendering backend."
+    },
+    "MinecraftGame_handleInput": {
+      "status": "candidate",
+      "vaddr": "unknown",
+      "evidence": "Likely routed through onInputDeviceAddedNative (0x85326ec) which calls 0xe4a2214 (lifecycle table 3) then BLRs via register path."
+    },
+    "GameControllerManager_register": {
+      "status": "candidate",
+      "vaddr": "unknown",
+      "evidence": "setControllerDetailsNative (0x85328b8) calls 0xe4a2214 then 0xe49ebb0 (input dispatcher). 'GameControllerManager' string exists at 0x35f9c8e but no direct xref."
+    },
+    "LevelRendererPlayer_render": {
+      "status": "candidate",
+      "vaddr": "0x111a4f44",
+      "evidence": "Function references 'LevelRenderer' string; candidate LevelRenderer operation (constructor, init, or render method)."
+    },
+    "LevelRenderer_draw": {
+      "status": "candidate",
+      "vaddr": "unknown",
+      "evidence": "Same as above; needs deeper chain tracing."
+    }
+  },
+  "next_actions": [
+    "Patch Symbols.cpp to fall back to JNI-export offsets when dlsym fails \u2014 nativeResize (0x852e348) is the canonical setRenderingSize hook surface.",
+    "Build a runtime cross-reference walker: from JNI export, follow BL chain through jump tables into 0x12900000-0x12a00000 engine region and identify the actual setSize target.",
+    "Disassemble the JNI surface between 0x852e000-0x8530000 in full and identify which 5 lifecycle JNI exports map to which jump-table slot.",
+    "Re-run on a Bedrock 1.20.x APK (if available) to confirm whether App::setRenderingSize is still in dynsym there; if so, dual-version Symbols.cpp with conditional compilation."
+  ],
+  "tools_used": [
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/symbolless_bedrock.py",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/symbolless_deepdive.py",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/symbolless_deepdive2.py",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/symbolless_string_xrefs.py"
+  ],
+  "outputs_generated": [
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/offset_map.json (stub from pass1)",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/jni_anchors.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/string_xrefs.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/function_catalog.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/offset_map_consolidated.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/deepdive_lifecycle.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/deepdive_input.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/reverse_xrefs.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/string_xrefs_v2.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/string_xrefs_v3.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/engine_method_xrefs.json",
+    "/Volumes/X10Pro/Projects/mcbedvr/tools/deepdive/string_xrefs_final.json"
+  ]
+}

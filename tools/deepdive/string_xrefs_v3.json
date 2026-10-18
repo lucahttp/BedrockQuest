@@ -1,0 +1,100 @@
+{
+  "MinecraftGame::init && MinecraftGame::setSize!": {
+    "description": "MinecraftGame::setSize",
+    "str_vaddr": "0x250030e",
+    "xref_count": 1,
+    "xref_pcs": [
+      "0x8534534"
+    ]
+  },
+  "MinecraftGame::setSize!": {
+    "description": "MinecraftGame::setSize (single)",
+    "str_vaddr": "0x2500325",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "MinecraftGame::startFrame()": {
+    "description": "MinecraftGame::startFrame",
+    "str_vaddr": "0x25273fe",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "MinecraftGame::endFrame()": {
+    "description": "MinecraftGame::endFrame",
+    "str_vaddr": "0x275802c",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "MinecraftGame::onTick()": {
+    "description": "MinecraftGame::onTick",
+    "str_vaddr": "0x23d9e1f",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "MinecraftGame::update()": {
+    "description": "MinecraftGame::update",
+    "str_vaddr": "0x2494807",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "MinecraftGame::_update()": {
+    "description": "MinecraftGame::_update",
+    "str_vaddr": "0x262d651",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "AppPlatform::initialize()": {
+    "description": "AppPlatform::initialize",
+    "str_vaddr": "0x264482b",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "RenderDragonInternal": {
+    "description": "RenderDragonInternal",
+    "str_vaddr": "0x25b1210",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "RenderDragonRenderingBackendE": {
+    "description": "RenderDragonRenderingBackend",
+    "str_vaddr": "0x2c4292f",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "setRenderingSizeEiiE3$_0": {
+    "description": "App::setRenderingSize lambda",
+    "str_vaddr": "0x2c017c0",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "setRenderingSizeEiiE3$_0NS_9allocatorIS3_EEFvvEEE": {
+    "description": "App::setRenderingSize std::function",
+    "str_vaddr": "0x2c017c0",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "onSurfaceChangedNative": {
+    "description": "onSurfaceChangedNative (JNI callback)",
+    "str_vaddr": "0x24229ba",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "onSurfaceCreatedNative": {
+    "description": "onSurfaceCreatedNative (JNI callback)",
+    "str_vaddr": "0x238ab72",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "GameControllerManager": {
+    "description": "GameControllerManager",
+    "str_vaddr": "0x35f9c8e",
+    "xref_count": 0,
+    "xref_pcs": []
+  },
+  "RenderDragon/src/Platform/BgfxContext.cpp": {
+    "description": "RenderDragon BgfxContext",
+    "str_vaddr": "0x237fd7e",
+    "xref_count": 0,
+    "xref_pcs": []
+  }
+}

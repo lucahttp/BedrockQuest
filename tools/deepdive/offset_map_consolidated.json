@@ -1,0 +1,38 @@
+{
+  "version": "1.26.52.3-final-mod2_sdk",
+  "method": "symbolless (ADRP+LDR + BL reverse xrefs + JNI anchor walk)",
+  "tracked_functions": {
+    "lifecycle_dispatchers": [
+      "0xe496620",
+      "0xe496624",
+      "0xe4a2214"
+    ],
+    "input_handlers": [
+      "0x8535f7c",
+      "0x8529190",
+      "0xb9c150c",
+      "0xb9c1a14",
+      "0x986ccec",
+      "0xe49ebb0"
+    ],
+    "jni_helpers": [
+      "0x129295b0",
+      "0x1298f8f0"
+    ]
+  },
+  "string_xref_summary": {},
+  "reverse_xref_counts": {
+    "0xe496620": 2432,
+    "0xe496624": 3527,
+    "0xe4a2214": 3316,
+    "0x8535f7c": 175,
+    "0x8529190": 126690,
+    "0xb9c150c": 1,
+    "0xb9c1a14": 1,
+    "0x986ccec": 11,
+    "0xe49ebb0": 232,
+    "0x129295b0": 423,
+    "0x1298f8f0": 11
+  },
+  "note": "All targets confirmed inside .text. Cross-reference with lifecycle_asm/input_asm to identify App::* and MinecraftGame::* equivalents. Next step: chase xrefs from each dispatcher to find AppPlatform::setRenderingSize equivalent."
+}

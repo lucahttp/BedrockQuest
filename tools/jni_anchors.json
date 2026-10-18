@@ -1,0 +1,4019 @@
+{
+  "version": "1.26.52.3",
+  "groups": {
+    "GameActivity": [
+      {
+        "name": "Java_com_google_androidgamesdk_GameActivity_initializeNativeCode",
+        "vaddr": "0x7f792e4"
+      }
+    ],
+    "ChoreographerCallback": [
+      {
+        "name": "Java_com_google_androidgamesdk_ChoreographerCallback_nOnChoreographer",
+        "vaddr": "0x7fa0694"
+      }
+    ],
+    "SwappyDisplayManager": [
+      {
+        "name": "Java_com_google_androidgamesdk_SwappyDisplayManager_nSetSupportedRefreshPeriods",
+        "vaddr": "0x7fa1798"
+      },
+      {
+        "name": "Java_com_google_androidgamesdk_SwappyDisplayManager_nOnRefreshPeriodChanged",
+        "vaddr": "0x7fa1a6c"
+      }
+    ],
+    "idp_util_HttpCall_setRequestBody__Ljava_lang_String": [
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRequestBody__Ljava_lang_String_2",
+        "vaddr": "0x825b564"
+      }
+    ],
+    "idp_util_HttpCall_setRequestBody__": [
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRequestBody___3B",
+        "vaddr": "0x825b7ec"
+      }
+    ],
+    "idp_util_HttpCall": [
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setCustomHeader",
+        "vaddr": "0x825b968"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRetryAllowed",
+        "vaddr": "0x825bcb4"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setLongHttpCall",
+        "vaddr": "0x825bd34"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setContentTypeHeaderValue",
+        "vaddr": "0x825bdb4"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setXboxContractVersionHeaderValue",
+        "vaddr": "0x825bf98"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_create",
+        "vaddr": "0x825cd48"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_delete",
+        "vaddr": "0x825d978"
+      }
+    ],
+    "idp_util_HttpCall_getResponseAsync__Lcom_microsoft_xbox_idp_util_HttpCall_Callback": [
+      {
+        "name": "Java_com_microsoft_xbox_idp_util_HttpCall_getResponseAsync__Lcom_microsoft_xbox_idp_util_HttpCall_Callback_2",
+        "vaddr": "0x825c17c"
+      }
+    ],
+    "idp_interop_XboxLiveAppConfig": [
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_create",
+        "vaddr": "0x8261860"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_delete",
+        "vaddr": "0x82618a4"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getTitleId",
+        "vaddr": "0x8261904"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getOverrideTitleId",
+        "vaddr": "0x826190c"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getScid",
+        "vaddr": "0x8261a28"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getEnvironment",
+        "vaddr": "0x8261b84"
+      },
+      {
+        "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getSandbox",
+        "vaddr": "0x8261b8c"
+      }
+    ],
+    "browser_BrowserLaunchActivity": [
+      {
+        "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationSucceeded",
+        "vaddr": "0x8291a2c"
+      },
+      {
+        "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationFailed",
+        "vaddr": "0x8291a48"
+      },
+      {
+        "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationCanceled",
+        "vaddr": "0x8291a64"
+      },
+      {
+        "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_checkIsLoaded",
+        "vaddr": "0x8291a80"
+      }
+    ],
+    "androidjava_PresenceManager": [
+      {
+        "name": "Java_com_microsoft_xal_androidjava_PresenceManager_resumePresence",
+        "vaddr": "0x835c720"
+      },
+      {
+        "name": "Java_com_microsoft_xal_androidjava_PresenceManager_pausePresence",
+        "vaddr": "0x835c8a8"
+      }
+    ],
+    "logging_XalLogger": [
+      {
+        "name": "Java_com_microsoft_xal_logging_XalLogger_nativeLogBatch",
+        "vaddr": "0x836c434"
+      }
+    ],
+    "MainActivity": [
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSuspendGameplayUpdates",
+        "vaddr": "0x852e328"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnDestroy",
+        "vaddr": "0x852e33c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeStopThis",
+        "vaddr": "0x852e340"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSuspend",
+        "vaddr": "0x852e344"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeResize",
+        "vaddr": "0x852e348"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeBackPressed",
+        "vaddr": "0x852e618"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeBackSpacePressed",
+        "vaddr": "0x852e870"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeReturnKeyPressed",
+        "vaddr": "0x852eac8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeClearAButtonState",
+        "vaddr": "0x852edc8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeShiftKeyPressed",
+        "vaddr": "0x852edd4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetTextboxText",
+        "vaddr": "0x852f034"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeStoragePermissionRequestResult",
+        "vaddr": "0x852f628"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeLoginData",
+        "vaddr": "0x852f818"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeShutdown",
+        "vaddr": "0x852f81c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidTrial",
+        "vaddr": "0x852fd9c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isBrazeEnabled",
+        "vaddr": "0x852fda4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isPublishBuild",
+        "vaddr": "0x852fda8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isEduMode",
+        "vaddr": "0x852fdb0"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isPreview",
+        "vaddr": "0x852fdb8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isTestInfrastructureDisabled",
+        "vaddr": "0x852fdc0"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidAmazon",
+        "vaddr": "0x852fdc8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidChromebook",
+        "vaddr": "0x852fdd0"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeKeyHandler",
+        "vaddr": "0x852fdd8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickImageSuccess",
+        "vaddr": "0x8530070"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickImageCanceled",
+        "vaddr": "0x8530584"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickFileSuccess",
+        "vaddr": "0x8530894"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickFileCanceled",
+        "vaddr": "0x8530f44"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeProcessIntentUriQuery",
+        "vaddr": "0x85315d8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeGetDeviceId",
+        "vaddr": "0x8532ca4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeDeviceCorrelation",
+        "vaddr": "0x8532e00"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_onSoftKeyboardClosed",
+        "vaddr": "0x8533044"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeWaitCrashManagementSetupComplete",
+        "vaddr": "0x853329c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetIntegrityToken",
+        "vaddr": "0x8533338"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetIntegrityTokenErrorMessage",
+        "vaddr": "0x85334ac"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetHeadphonesConnected",
+        "vaddr": "0x110b7e74"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_MainActivity_nativeRunNativeCallbackOnUiThread",
+        "vaddr": "0x128dcb0c"
+      }
+    ],
+    "NotificationListenerService": [
+      {
+        "name": "Java_com_mojang_minecraftpe_NotificationListenerService_nativePushNotificationReceived",
+        "vaddr": "0x8531084"
+      }
+    ],
+    "input_JellyBeanDeviceManager": [
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceAddedNative",
+        "vaddr": "0x85326ec"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceChangedNative",
+        "vaddr": "0x85327a0"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceRemovedNative",
+        "vaddr": "0x85327a4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setDoubleTriggersSupportedNative",
+        "vaddr": "0x8532858"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setControllerDetailsNative",
+        "vaddr": "0x85328b8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundXboxControllerNative",
+        "vaddr": "0x85329d4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundPlaystationControllerNative",
+        "vaddr": "0x8532ac4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundDualsenseControllerNative",
+        "vaddr": "0x8532bb4"
+      }
+    ],
+    "NetworkMonitor": [
+      {
+        "name": "Java_com_mojang_minecraftpe_NetworkMonitor_nativeUpdateNetworkStatus",
+        "vaddr": "0x8547540"
+      }
+    ],
+    "store_NativeStoreListener": [
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onStoreInitialized",
+        "vaddr": "0x98cece8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryProductsSuccess",
+        "vaddr": "0x98cee14"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryProductsFail",
+        "vaddr": "0x98cf7fc"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseSuccessful",
+        "vaddr": "0x98cf91c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseCanceled",
+        "vaddr": "0x98d00e8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseFailed",
+        "vaddr": "0x98d0324"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchasePlatformStoreFailed",
+        "vaddr": "0x98d0560"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchasePending",
+        "vaddr": "0x98d088c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryPurchasesSuccess",
+        "vaddr": "0x98d0ac8"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryPurchasesFail",
+        "vaddr": "0x98d13c8"
+      }
+    ],
+    "Webview_MinecraftWebview": [
+      {
+        "name": "Java_com_mojang_minecraftpe_Webview_MinecraftWebview_nativeSendToHost",
+        "vaddr": "0xb9c20ec"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_Webview_MinecraftWebview_nativeOnWebError",
+        "vaddr": "0xb9c27e8"
+      }
+    ],
+    "BatteryMonitor": [
+      {
+        "name": "Java_com_mojang_minecraftpe_BatteryMonitor_nativeUpdateBatteryStatus",
+        "vaddr": "0xb9c49a0"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_BatteryMonitor_nativeUpdateBatteryThermalStatus",
+        "vaddr": "0xb9c6570"
+      }
+    ],
+    "ThermalMonitor": [
+      {
+        "name": "Java_com_mojang_minecraftpe_ThermalMonitor_nativeUpdateLowPowerModeStatus",
+        "vaddr": "0xb9c65d8"
+      }
+    ],
+    "AppExitInfoHelper": [
+      {
+        "name": "Java_com_mojang_minecraftpe_AppExitInfoHelper_nativeSendApplicationExitInfo",
+        "vaddr": "0xb9c671c"
+      }
+    ],
+    "CrashManager": [
+      {
+        "name": "Java_com_mojang_minecraftpe_CrashManager_nativeNotifyUncaughtException",
+        "vaddr": "0x112799f0"
+      }
+    ],
+    "WorldRecovery": [
+      {
+        "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeError",
+        "vaddr": "0x1127cb8c"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeUpdate",
+        "vaddr": "0x1127cda4"
+      },
+      {
+        "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeComplete",
+        "vaddr": "0x1127d2a0"
+      }
+    ],
+    "FilePickerManager": [
+      {
+        "name": "Java_com_mojang_minecraftpe_FilePickerManager_nativeDirectoryPickResult",
+        "vaddr": "0x112e5f38"
+      }
+    ]
+  },
+  "anchors_walked": [
+    {
+      "name": "Java_com_google_androidgamesdk_GameActivity_initializeNativeCode",
+      "addr": "0x7f792e4",
+      "first_calls": [
+        {
+          "addr": "0x7f7931c",
+          "mnemonic": "bl",
+          "target": "#0xe4bb09c",
+          "target_int": null
+        },
+        {
+          "addr": "0x7f793a8",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_google_androidgamesdk_ChoreographerCallback_nOnChoreographer",
+      "addr": "0x7fa0694",
+      "first_calls": [
+        {
+          "addr": "0x7fa06f0",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa0720",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa0764",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa0790",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_google_androidgamesdk_SwappyDisplayManager_nSetSupportedRefreshPeriods",
+      "addr": "0x7fa1798",
+      "first_calls": [
+        {
+          "addr": "0x7fa17d4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa17e0",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa1830",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa1850",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa1884",
+          "mnemonic": "bl",
+          "target": "#0xe4a2340",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_google_androidgamesdk_SwappyDisplayManager_nOnRefreshPeriodChanged",
+      "addr": "0x7fa1a6c",
+      "first_calls": [
+        {
+          "addr": "0x7fa1a90",
+          "mnemonic": "bl",
+          "target": "#0xe4bb224",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa1a98",
+          "mnemonic": "bl",
+          "target": "#0xe4bb340",
+          "target_int": null
+        },
+        {
+          "addr": "0x7fa1abc",
+          "mnemonic": "bl",
+          "target": "#0xe4965a4",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRequestBody__Ljava_lang_String_2",
+      "addr": "0x825b564",
+      "first_calls": [
+        {
+          "addr": "0x825b59c",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b5b0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b5d4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b5ec",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b5fc",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b638",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b658",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRequestBody___3B",
+      "addr": "0x825b7ec",
+      "first_calls": [
+        {
+          "addr": "0x825b830",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b848",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b864",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b87c",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b894",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b8b8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b8d0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b8dc",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd44",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setCustomHeader",
+      "addr": "0x825b968",
+      "first_calls": [
+        {
+          "addr": "0x825b9a8",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b9b8",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b9cc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825b9f0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825ba08",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825ba18",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x825ba54",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setRetryAllowed",
+      "addr": "0x825bcb4",
+      "first_calls": [
+        {
+          "addr": "0x825bcd8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bcfc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd14",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd58",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd7c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd94",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setLongHttpCall",
+      "addr": "0x825bd34",
+      "first_calls": [
+        {
+          "addr": "0x825bd58",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd7c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bd94",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bdec",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be00",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be24",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setContentTypeHeaderValue",
+      "addr": "0x825bdb4",
+      "first_calls": [
+        {
+          "addr": "0x825bdec",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be00",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be24",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be3c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be4c",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x825be88",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bea8",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_setXboxContractVersionHeaderValue",
+      "addr": "0x825bf98",
+      "first_calls": [
+        {
+          "addr": "0x825bfd0",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825bfe4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c008",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c020",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c030",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c06c",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c08c",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_getResponseAsync__Lcom_microsoft_xbox_idp_util_HttpCall_Callback_2",
+      "addr": "0x825c17c",
+      "first_calls": [
+        {
+          "addr": "0x825c1bc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c1d4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c1ec",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c200",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c218",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c23c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c254",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825c264",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd5c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_create",
+      "addr": "0x825cd48",
+      "first_calls": [
+        {
+          "addr": "0x825cd88",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825cd98",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825cda8",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd3c",
+          "target_int": null
+        },
+        {
+          "addr": "0x825cdc4",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x825cdcc",
+          "mnemonic": "bl",
+          "target": "#0xe4bc2cc",
+          "target_int": null
+        },
+        {
+          "addr": "0x825cdd8",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd60",
+          "target_int": null
+        },
+        {
+          "addr": "0x825ce0c",
+          "mnemonic": "bl",
+          "target": "#0xe4bb9b0",
+          "target_int": null
+        },
+        {
+          "addr": "0x825ce20",
+          "mnemonic": "bl",
+          "target": "#0xe4bb95c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_util_HttpCall_delete",
+      "addr": "0x825d978",
+      "first_calls": [
+        {
+          "addr": "0x825d9b8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x825d9c0",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x825d9e8",
+          "mnemonic": "bl",
+          "target": "#0xe49fa40",
+          "target_int": null
+        },
+        {
+          "addr": "0x825da18",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x825da24",
+          "mnemonic": "bl",
+          "target": "#0x8535e6c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_create",
+      "addr": "0x8261860",
+      "first_calls": [
+        {
+          "addr": "0x8261870",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x826187c",
+          "mnemonic": "bl",
+          "target": "#0xe4bb9b4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261898",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x82618a0",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        },
+        {
+          "addr": "0x82618e4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x82618ec",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261934",
+          "mnemonic": "bl",
+          "target": "#0xe4bd578",
+          "target_int": null
+        },
+        {
+          "addr": "0x826194c",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_delete",
+      "addr": "0x82618a4",
+      "first_calls": [
+        {
+          "addr": "0x82618e4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x82618ec",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261934",
+          "mnemonic": "bl",
+          "target": "#0xe4bd578",
+          "target_int": null
+        },
+        {
+          "addr": "0x826194c",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261988",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getTitleId",
+      "addr": "0x8261904",
+      "first_calls": [
+        {
+          "addr": "0x8261934",
+          "mnemonic": "bl",
+          "target": "#0xe4bd578",
+          "target_int": null
+        },
+        {
+          "addr": "0x826194c",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261988",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619a8",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619bc",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd90",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619d0",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getOverrideTitleId",
+      "addr": "0x826190c",
+      "first_calls": [
+        {
+          "addr": "0x8261934",
+          "mnemonic": "bl",
+          "target": "#0xe4bd578",
+          "target_int": null
+        },
+        {
+          "addr": "0x826194c",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261988",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619a8",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619bc",
+          "mnemonic": "bl",
+          "target": "#0xe4bdd90",
+          "target_int": null
+        },
+        {
+          "addr": "0x82619d0",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261a04",
+          "mnemonic": "bl",
+          "target": "#0xe496850",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261a08",
+          "mnemonic": "bl",
+          "target": "#0xe4965a4",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getScid",
+      "addr": "0x8261a28",
+      "first_calls": [
+        {
+          "addr": "0x8261a58",
+          "mnemonic": "bl",
+          "target": "#0xe4bba74",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261a70",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261aac",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261acc",
+          "mnemonic": "bl",
+          "target": "#0xe496580",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261b10",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getEnvironment",
+      "addr": "0x8261b84",
+      "first_calls": [
+        {
+          "addr": "0x8261ba4",
+          "mnemonic": "bl",
+          "target": "#0xe4bc688",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c20",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c38",
+          "mnemonic": "bl",
+          "target": "#0x853c1e0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c50",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c74",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xbox_idp_interop_XboxLiveAppConfig_getSandbox",
+      "addr": "0x8261b8c",
+      "first_calls": [
+        {
+          "addr": "0x8261ba4",
+          "mnemonic": "bl",
+          "target": "#0xe4bc688",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c20",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c38",
+          "mnemonic": "bl",
+          "target": "#0x853c1e0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c50",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8261c74",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationSucceeded",
+      "addr": "0x8291a2c",
+      "first_calls": [
+        {
+          "addr": "0x8291aa8",
+          "mnemonic": "bl",
+          "target": "#0x7b89fc4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291abc",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291ae4",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291afc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b04",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationFailed",
+      "addr": "0x8291a48",
+      "first_calls": [
+        {
+          "addr": "0x8291aa8",
+          "mnemonic": "bl",
+          "target": "#0x7b89fc4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291abc",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291ae4",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291afc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b04",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_urlOperationCanceled",
+      "addr": "0x8291a64",
+      "first_calls": [
+        {
+          "addr": "0x8291aa8",
+          "mnemonic": "bl",
+          "target": "#0x7b89fc4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291abc",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291ae4",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291afc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b04",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b54",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_browser_BrowserLaunchActivity_checkIsLoaded",
+      "addr": "0x8291a80",
+      "first_calls": [
+        {
+          "addr": "0x8291aa8",
+          "mnemonic": "bl",
+          "target": "#0x7b89fc4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291abc",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291ae4",
+          "mnemonic": "bl",
+          "target": "#0x8529130",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291afc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b04",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        },
+        {
+          "addr": "0x8291b54",
+          "mnemonic": "bl",
+          "target": "#0xe4be090",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_androidjava_PresenceManager_resumePresence",
+      "addr": "0x835c720",
+      "first_calls": [
+        {
+          "addr": "0x835c740",
+          "mnemonic": "bl",
+          "target": "#0xe4be114",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c74c",
+          "mnemonic": "bl",
+          "target": "#0xe4be118",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c75c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c784",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c7a0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c7c0",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c7e4",
+          "mnemonic": "bl",
+          "target": "#0xe4965a4",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c7f4",
+          "mnemonic": "bl",
+          "target": "#0xe4b7d14",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_androidjava_PresenceManager_pausePresence",
+      "addr": "0x835c8a8",
+      "first_calls": [
+        {
+          "addr": "0x835c8c8",
+          "mnemonic": "bl",
+          "target": "#0xe4be114",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c8d4",
+          "mnemonic": "bl",
+          "target": "#0xe4be118",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c8e8",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c8f8",
+          "mnemonic": "bl",
+          "target": "#0xe4be3a4",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c900",
+          "mnemonic": "bl",
+          "target": "#0xe4be0cc",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c914",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c93c",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        },
+        {
+          "addr": "0x835c958",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_microsoft_xal_logging_XalLogger_nativeLogBatch",
+      "addr": "0x836c434",
+      "first_calls": [
+        {
+          "addr": "0x836c46c",
+          "mnemonic": "bl",
+          "target": "#0xe4be294",
+          "target_int": null
+        },
+        {
+          "addr": "0x836c498",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        },
+        {
+          "addr": "0x836c4d8",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        },
+        {
+          "addr": "0x836c4fc",
+          "mnemonic": "bl",
+          "target": "#0xe4bc29c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSuspendGameplayUpdates",
+      "addr": "0x852e328",
+      "first_calls": [
+        {
+          "addr": "0x852e380",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3d4",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3e0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnDestroy",
+      "addr": "0x852e33c",
+      "first_calls": [
+        {
+          "addr": "0x852e380",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3d4",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3e0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeStopThis",
+      "addr": "0x852e340",
+      "first_calls": [
+        {
+          "addr": "0x852e380",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3d4",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3e0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSuspend",
+      "addr": "0x852e344",
+      "first_calls": [
+        {
+          "addr": "0x852e380",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3d4",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3e0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeResize",
+      "addr": "0x852e348",
+      "first_calls": [
+        {
+          "addr": "0x852e380",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3d4",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e3e0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeBackPressed",
+      "addr": "0x852e618",
+      "first_calls": [
+        {
+          "addr": "0x852e644",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e6c0",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e6d4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e6e8",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e6fc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e704",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeBackSpacePressed",
+      "addr": "0x852e870",
+      "first_calls": [
+        {
+          "addr": "0x852e89c",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e918",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e92c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e940",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e954",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852e95c",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeReturnKeyPressed",
+      "addr": "0x852eac8",
+      "first_calls": [
+        {
+          "addr": "0x852eaf8",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eb20",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eb34",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eb44",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeClearAButtonState",
+      "addr": "0x852edc8",
+      "first_calls": [
+        {
+          "addr": "0x852ee04",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852ee84",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852ee98",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eeac",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eec0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeShiftKeyPressed",
+      "addr": "0x852edd4",
+      "first_calls": [
+        {
+          "addr": "0x852ee04",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852ee84",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852ee98",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eeac",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eec0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852eec8",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetTextboxText",
+      "addr": "0x852f034",
+      "first_calls": [
+        {
+          "addr": "0x852f080",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f0c4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f0d4",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeStoragePermissionRequestResult",
+      "addr": "0x852f628",
+      "first_calls": [
+        {
+          "addr": "0x852f65c",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f6c0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f6f4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f700",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f714",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f71c",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeLoginData",
+      "addr": "0x852f818",
+      "first_calls": [
+        {
+          "addr": "0x852f84c",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f878",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f8a8",
+          "mnemonic": "bl",
+          "target": "#0xe4c27fc",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f8f0",
+          "mnemonic": "bl",
+          "target": "#0xe4c27fc",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f914",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeShutdown",
+      "addr": "0x852f81c",
+      "first_calls": [
+        {
+          "addr": "0x852f84c",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f878",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f8a8",
+          "mnemonic": "bl",
+          "target": "#0xe4c27fc",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f8f0",
+          "mnemonic": "bl",
+          "target": "#0xe4c27fc",
+          "target_int": null
+        },
+        {
+          "addr": "0x852f914",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidTrial",
+      "addr": "0x852fd9c",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isBrazeEnabled",
+      "addr": "0x852fda4",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isPublishBuild",
+      "addr": "0x852fda8",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isEduMode",
+      "addr": "0x852fdb0",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isPreview",
+      "addr": "0x852fdb8",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852feb4",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isTestInfrastructureDisabled",
+      "addr": "0x852fdc0",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852feb4",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidAmazon",
+      "addr": "0x852fdc8",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852feb4",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_isAndroidChromebook",
+      "addr": "0x852fdd0",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852feb4",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852fec8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeKeyHandler",
+      "addr": "0x852fdd8",
+      "first_calls": [
+        {
+          "addr": "0x852fe38",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x852feb4",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x852fec8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickImageSuccess",
+      "addr": "0x8530070",
+      "first_calls": [
+        {
+          "addr": "0x85300b4",
+          "mnemonic": "bl",
+          "target": "#0x8529160",
+          "target_int": null
+        },
+        {
+          "addr": "0x85300c8",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x85300dc",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x85300e4",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x85300ec",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x85300fc",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530128",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530138",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickImageCanceled",
+      "addr": "0x8530584",
+      "first_calls": [
+        {
+          "addr": "0x85305bc",
+          "mnemonic": "bl",
+          "target": "#0x8529160",
+          "target_int": null
+        },
+        {
+          "addr": "0x85305d0",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x85305dc",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x85305ec",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x853067c",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickFileSuccess",
+      "addr": "0x8530894",
+      "first_calls": [
+        {
+          "addr": "0x85308d8",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530908",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530920",
+          "mnemonic": "bl",
+          "target": "#0xe496578",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530974",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeOnPickFileCanceled",
+      "addr": "0x8530f44",
+      "first_calls": [
+        {
+          "addr": "0x8530f70",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530f94",
+          "mnemonic": "bl",
+          "target": "#0x8546164",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530fb8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530fcc",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530fe0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530fe8",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x8530ffc",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531010",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_NotificationListenerService_nativePushNotificationReceived",
+      "addr": "0x8531084",
+      "first_calls": [
+        {
+          "addr": "0x85310d4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531100",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531130",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531140",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531150",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8531178",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeProcessIntentUriQuery",
+      "addr": "0x85315d8",
+      "first_calls": [
+        {
+          "addr": "0x8531614",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x85316b8",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x85316c8",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceAddedNative",
+      "addr": "0x85326ec",
+      "first_calls": [
+        {
+          "addr": "0x8532708",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532730",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532744",
+          "mnemonic": "bl",
+          "target": "#0xb9c150c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532758",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532778",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532794",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x853279c",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        },
+        {
+          "addr": "0x85327c0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceChangedNative",
+      "addr": "0x85327a0",
+      "first_calls": [
+        {
+          "addr": "0x85327c0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x85327e8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x85327fc",
+          "mnemonic": "bl",
+          "target": "#0xb9c18b8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532810",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532830",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x853284c",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532854",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532870",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_onInputDeviceRemovedNative",
+      "addr": "0x85327a4",
+      "first_calls": [
+        {
+          "addr": "0x85327c0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x85327e8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x85327fc",
+          "mnemonic": "bl",
+          "target": "#0xb9c18b8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532810",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532830",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x853284c",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532854",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532870",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setDoubleTriggersSupportedNative",
+      "addr": "0x8532858",
+      "first_calls": [
+        {
+          "addr": "0x8532870",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532884",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x85328a4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x85328e4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532934",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532944",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setControllerDetailsNative",
+      "addr": "0x85328b8",
+      "first_calls": [
+        {
+          "addr": "0x85328e4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532934",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532944",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532968",
+          "mnemonic": "bl",
+          "target": "#0xb9c1a14",
+          "target_int": null
+        },
+        {
+          "addr": "0x853297c",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x85329a4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundXboxControllerNative",
+      "addr": "0x85329d4",
+      "first_calls": [
+        {
+          "addr": "0x85329f4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532a38",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532a48",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532a60",
+          "mnemonic": "bl",
+          "target": "#0xb9c1a94",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532a74",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532a98",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ab8",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ac0",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundPlaystationControllerNative",
+      "addr": "0x8532ac4",
+      "first_calls": [
+        {
+          "addr": "0x8532ae4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532b28",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532b38",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532b50",
+          "mnemonic": "bl",
+          "target": "#0xb9c1aa8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532b64",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532b88",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ba8",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532bb0",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_input_JellyBeanDeviceManager_setFoundDualsenseControllerNative",
+      "addr": "0x8532bb4",
+      "first_calls": [
+        {
+          "addr": "0x8532bd4",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c18",
+          "mnemonic": "bl",
+          "target": "#0xe49ebb0",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c28",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c40",
+          "mnemonic": "bl",
+          "target": "#0xb9c1abc",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c54",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c78",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532c98",
+          "mnemonic": "bl",
+          "target": "#0x852fd4c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ca0",
+          "mnemonic": "bl",
+          "target": "#0x8529384",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeGetDeviceId",
+      "addr": "0x8532ca4",
+      "first_calls": [
+        {
+          "addr": "0x8532cd8",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d08",
+          "mnemonic": "blr",
+          "target": "x9",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d28",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d3c",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d60",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d74",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d88",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532d90",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeDeviceCorrelation",
+      "addr": "0x8532e00",
+      "first_calls": [
+        {
+          "addr": "0x8532e40",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532e68",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532e78",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532e88",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532eb0",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ec0",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ed0",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8532ef8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_onSoftKeyboardClosed",
+      "addr": "0x8533044",
+      "first_calls": [
+        {
+          "addr": "0x8533070",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x85330ec",
+          "mnemonic": "bl",
+          "target": "#0x8535f7c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533100",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533114",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533128",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533130",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeWaitCrashManagementSetupComplete",
+      "addr": "0x853329c",
+      "first_calls": [
+        {
+          "addr": "0x85332d8",
+          "mnemonic": "bl",
+          "target": "#0xe496620",
+          "target_int": null
+        },
+        {
+          "addr": "0x85332ec",
+          "mnemonic": "bl",
+          "target": "#0xe49f5a8",
+          "target_int": null
+        },
+        {
+          "addr": "0x853330c",
+          "mnemonic": "bl",
+          "target": "#0xe496624",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533334",
+          "mnemonic": "bl",
+          "target": "#0xe4965a4",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533374",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetIntegrityToken",
+      "addr": "0x8533338",
+      "first_calls": [
+        {
+          "addr": "0x8533374",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x85333a0",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x85333d0",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x85333e0",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x85333f4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533404",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533410",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533424",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetIntegrityTokenErrorMessage",
+      "addr": "0x85334ac",
+      "first_calls": [
+        {
+          "addr": "0x85334e8",
+          "mnemonic": "bl",
+          "target": "#0xe4a2214",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533514",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533544",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533554",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533568",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533578",
+          "mnemonic": "bl",
+          "target": "#0xe496718",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533584",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x8533598",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_NetworkMonitor_nativeUpdateNetworkStatus",
+      "addr": "0x8547540",
+      "first_calls": [
+        {
+          "addr": "0x8547580",
+          "mnemonic": "bl",
+          "target": "#0xe4c2a40",
+          "target_int": null
+        },
+        {
+          "addr": "0x85475b0",
+          "mnemonic": "bl",
+          "target": "#0x8529160",
+          "target_int": null
+        },
+        {
+          "addr": "0x85475f4",
+          "mnemonic": "bl",
+          "target": "#0xe4c2a44",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onStoreInitialized",
+      "addr": "0x98cece8",
+      "first_calls": [
+        {
+          "addr": "0x98ced30",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ced44",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ced74",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ced7c",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ceda0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryProductsSuccess",
+      "addr": "0x98cee14",
+      "first_calls": [
+        {
+          "addr": "0x98cee60",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ceeb4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ceed0",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ceee0",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98ceef8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cef08",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryProductsFail",
+      "addr": "0x98cf7fc",
+      "first_calls": [
+        {
+          "addr": "0x98cf838",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf84c",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf87c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf884",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf8a8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseSuccessful",
+      "addr": "0x98cf91c",
+      "first_calls": [
+        {
+          "addr": "0x98cf95c",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf96c",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf97c",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf9a8",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf9d0",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98cf9f8",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseCanceled",
+      "addr": "0x98d00e8",
+      "first_calls": [
+        {
+          "addr": "0x98d0118",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0140",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0164",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d01a4",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d01b8",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchaseFailed",
+      "addr": "0x98d0324",
+      "first_calls": [
+        {
+          "addr": "0x98d0354",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d037c",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d03a0",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d03e0",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d03f4",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchasePlatformStoreFailed",
+      "addr": "0x98d0560",
+      "first_calls": [
+        {
+          "addr": "0x98d0598",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d05a8",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d05d0",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0618",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0624",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onPurchasePending",
+      "addr": "0x98d088c",
+      "first_calls": [
+        {
+          "addr": "0x98d08bc",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d08e4",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0908",
+          "mnemonic": "bl",
+          "target": "#0xe496834",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0948",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d095c",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryPurchasesSuccess",
+      "addr": "0x98d0ac8",
+      "first_calls": [
+        {
+          "addr": "0x98d0b14",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0b64",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0b80",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0b90",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0ba8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d0bb8",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_store_NativeStoreListener_onQueryPurchasesFail",
+      "addr": "0x98d13c8",
+      "first_calls": [
+        {
+          "addr": "0x98d1404",
+          "mnemonic": "bl",
+          "target": "#0x11526da0",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d1418",
+          "mnemonic": "bl",
+          "target": "#0x8529190",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d1448",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d1450",
+          "mnemonic": "bl",
+          "target": "#0xe49fa08",
+          "target_int": null
+        },
+        {
+          "addr": "0x98d1474",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_Webview_MinecraftWebview_nativeSendToHost",
+      "addr": "0xb9c20ec",
+      "first_calls": []
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_Webview_MinecraftWebview_nativeOnWebError",
+      "addr": "0xb9c27e8",
+      "first_calls": []
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_BatteryMonitor_nativeUpdateBatteryStatus",
+      "addr": "0xb9c49a0",
+      "first_calls": [
+        {
+          "addr": "0xb9c4a6c",
+          "mnemonic": "bl",
+          "target": "#0x128dbf2c",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c4a70",
+          "mnemonic": "bl",
+          "target": "#0x128db3b8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c4a80",
+          "mnemonic": "bl",
+          "target": "#0x128dbbd8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c4a94",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_BatteryMonitor_nativeUpdateBatteryThermalStatus",
+      "addr": "0xb9c6570",
+      "first_calls": [
+        {
+          "addr": "0xb9c6610",
+          "mnemonic": "bl",
+          "target": "#0x128dbf2c",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6614",
+          "mnemonic": "bl",
+          "target": "#0x128db3b8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6620",
+          "mnemonic": "bl",
+          "target": "#0x128dbf38",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6634",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6658",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6668",
+          "mnemonic": "bl",
+          "target": "#0x853c1e0",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_ThermalMonitor_nativeUpdateLowPowerModeStatus",
+      "addr": "0xb9c65d8",
+      "first_calls": [
+        {
+          "addr": "0xb9c6610",
+          "mnemonic": "bl",
+          "target": "#0x128dbf2c",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6614",
+          "mnemonic": "bl",
+          "target": "#0x128db3b8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6620",
+          "mnemonic": "bl",
+          "target": "#0x128dbf38",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6634",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6658",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6668",
+          "mnemonic": "bl",
+          "target": "#0x853c1e0",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6670",
+          "mnemonic": "bl",
+          "target": "#0x128dba28",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6680",
+          "mnemonic": "bl",
+          "target": "#0x128dbb30",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_AppExitInfoHelper_nativeSendApplicationExitInfo",
+      "addr": "0xb9c671c",
+      "first_calls": [
+        {
+          "addr": "0xb9c6774",
+          "mnemonic": "bl",
+          "target": "#0x12912190",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6788",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c6794",
+          "mnemonic": "bl",
+          "target": "#0x12912180",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c67a4",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c67b4",
+          "mnemonic": "bl",
+          "target": "#0x852f42c",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c67dc",
+          "mnemonic": "bl",
+          "target": "#0x8538210",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c67ec",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        },
+        {
+          "addr": "0xb9c67fc",
+          "mnemonic": "bl",
+          "target": "#0x1290e36c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeSetHeadphonesConnected",
+      "addr": "0x110b7e74",
+      "first_calls": [
+        {
+          "addr": "0x110b7f0c",
+          "mnemonic": "bl",
+          "target": "#0x1298f8f0",
+          "target_int": null
+        },
+        {
+          "addr": "0x110b7f18",
+          "mnemonic": "bl",
+          "target": "#0x110b7d2c",
+          "target_int": null
+        },
+        {
+          "addr": "0x110b7f48",
+          "mnemonic": "bl",
+          "target": "#0x986ccec",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_CrashManager_nativeNotifyUncaughtException",
+      "addr": "0x112799f0",
+      "first_calls": [
+        {
+          "addr": "0x11279a28",
+          "mnemonic": "bl",
+          "target": "#0x1290e36c",
+          "target_int": null
+        },
+        {
+          "addr": "0x11279a58",
+          "mnemonic": "bl",
+          "target": "#0xe4c40ac",
+          "target_int": null
+        },
+        {
+          "addr": "0x11279a74",
+          "mnemonic": "bl",
+          "target": "#0x1290e3a8",
+          "target_int": null
+        },
+        {
+          "addr": "0x11279a84",
+          "mnemonic": "bl",
+          "target": "#0x1290e3a8",
+          "target_int": null
+        },
+        {
+          "addr": "0x11279a94",
+          "mnemonic": "bl",
+          "target": "#0x1290e36c",
+          "target_int": null
+        },
+        {
+          "addr": "0x11279ac4",
+          "mnemonic": "bl",
+          "target": "#0xe4c40ac",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeError",
+      "addr": "0x1127cb8c",
+      "first_calls": [
+        {
+          "addr": "0x1127cbc8",
+          "mnemonic": "bl",
+          "target": "#0x1127caa8",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127cbec",
+          "mnemonic": "bl",
+          "target": "#0xe4c4644",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127cbf8",
+          "mnemonic": "bl",
+          "target": "#0x12912180",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127cc70",
+          "mnemonic": "bl",
+          "target": "#0x1127660c",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeUpdate",
+      "addr": "0x1127cda4",
+      "first_calls": [
+        {
+          "addr": "0x1127cdec",
+          "mnemonic": "bl",
+          "target": "#0x1127caa8",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127ce10",
+          "mnemonic": "bl",
+          "target": "#0xe4c4644",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127ce1c",
+          "mnemonic": "bl",
+          "target": "#0x12912180",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127ce68",
+          "mnemonic": "bl",
+          "target": "#0x127eafe0",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127ce98",
+          "mnemonic": "bl",
+          "target": "#0x12911a10",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_WorldRecovery_nativeComplete",
+      "addr": "0x1127d2a0",
+      "first_calls": [
+        {
+          "addr": "0x1127d2c0",
+          "mnemonic": "bl",
+          "target": "#0x1127caa8",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d2f4",
+          "mnemonic": "bl",
+          "target": "#0x1127660c",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d304",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d314",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d328",
+          "mnemonic": "bl",
+          "target": "#0xe4c40a4",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d35c",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d38c",
+          "mnemonic": "bl",
+          "target": "#0xa299b98",
+          "target_int": null
+        },
+        {
+          "addr": "0x1127d394",
+          "mnemonic": "bl",
+          "target": "#0xa299b98",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_FilePickerManager_nativeDirectoryPickResult",
+      "addr": "0x112e5f38",
+      "first_calls": [
+        {
+          "addr": "0x112e5f70",
+          "mnemonic": "bl",
+          "target": "#0xe4c4644",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e5f80",
+          "mnemonic": "bl",
+          "target": "#0xe4c4644",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e5f90",
+          "mnemonic": "bl",
+          "target": "#0x1290e36c",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e5fbc",
+          "mnemonic": "bl",
+          "target": "#0xe4c40ac",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e5fd8",
+          "mnemonic": "bl",
+          "target": "#0x1290e3a8",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e5fe8",
+          "mnemonic": "bl",
+          "target": "#0x1290e3a8",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e6014",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        },
+        {
+          "addr": "0x112e6024",
+          "mnemonic": "bl",
+          "target": "#0x129118d0",
+          "target_int": null
+        }
+      ]
+    },
+    {
+      "name": "Java_com_mojang_minecraftpe_MainActivity_nativeRunNativeCallbackOnUiThread",
+      "addr": "0x128dcb0c",
+      "first_calls": [
+        {
+          "addr": "0x128dcb60",
+          "mnemonic": "bl",
+          "target": "#0x129295b0",
+          "target_int": null
+        },
+        {
+          "addr": "0x128dcb7c",
+          "mnemonic": "bl",
+          "target": "#0x129295b0",
+          "target_int": null
+        },
+        {
+          "addr": "0x128dcba4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x128dcbc8",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x128dcbe4",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        },
+        {
+          "addr": "0x128dcc08",
+          "mnemonic": "blr",
+          "target": "x8",
+          "target_int": null
+        }
+      ]
+    }
+  ]
+}

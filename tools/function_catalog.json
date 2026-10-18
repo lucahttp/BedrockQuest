@@ -1,0 +1,8 @@
+{
+  "version": "1.26.52.3",
+  "text_vaddr": "0x64c64e0",
+  "text_size_kb": 201003,
+  "prologue_count": 0,
+  "note": "Sample: first 1000 prologue offsets.",
+  "sample": []
+}

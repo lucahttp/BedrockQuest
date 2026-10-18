@@ -1,0 +1,231 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import java.nio.file.Paths
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.jetbrains.kotlin.android) apply false
+}
+
+ext {
+    sharedNDKVersion = '21.3.6528147'
+    sharedTargetSdk = 30
+    sharedCompileSdk = 34
+    sharedMinSdk = 29
+    sharedBuildTools = '34.0.0'
+}
+
+// clean Json Files
+task cleanJsonFiles {
+    doLast {
+        // clean related json files if exists
+        def jsonFile = new File("buildArtifacts.json")
+        if (jsonFile.exists()) {
+            jsonFile.delete()
+        }
+        jsonFile = new File("unsignedReleaseApk.json")
+        if (jsonFile.exists()) {
+            jsonFile.delete()
+        }
+        jsonFile = new File("signedReleaseApk.json")
+        if (jsonFile.exists()) {
+            jsonFile.delete()
+        }
+        jsonFile = new File("unsignedDebugApk.json")
+        if (jsonFile.exists()) {
+            jsonFile.delete()
+        }
+        jsonFile = new File("signedDebugApk.json")
+        if (jsonFile.exists()) {
+            jsonFile.delete()
+        }
+    }
+}
+
+// renameAndGenerateBuildArtifactsJson for sub-projects
+task renameAndGenerateBuildArtifactsJson {
+    dependsOn cleanJsonFiles
+    doLast {
+        def samplesFolderRelativePath = "samples"
+        def uploadJsonStringItems = []
+        def unsignedReleaseApkStringItems = []
+        def signedReleaseApkStringItems = []
+        def unsignedDebugApkStringItems = []
+        def signedDebugApkStringItems = []
+        new File(samplesFolderRelativePath).listFiles()?.each { file ->
+            if (file.isDirectory()) {
+                def basePath = new File("${samplesFolderRelativePath}/")
+                def dir = new File("${samplesFolderRelativePath}/${file.name}/project/android")
+                if (dir.exists()) {
+                    def moduleAndroidPath = "\${TARGETCODEPATH}/Samples/samples/" + Paths.get(basePath.toURI()).relativize(Paths.get(dir.toURI())).toString()
+
+                    // release apk
+                    def apkFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/release/${file.name}-release-unsigned.apk")
+                    if (apkFile.exists()) {
+                        // check metadata.json
+                        def metadataJsonFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/release/output-metadata.json")
+                        if (metadataJsonFile.exists()) {
+                            // rename metadata.json
+                            def metadataJsonFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/release/${file.name}-release.apk.output-metadata.json")
+                            metadataJsonFile.renameTo(metadataJsonFileNewName)
+                        }
+                        // check native-debug-symbols.zip
+                        def nativeDebugSymbolsZipFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/native-debug-symbols/release/native-debug-symbols.zip")
+                        if (nativeDebugSymbolsZipFile.exists()) {
+                            // rename native-debug-symbols.zip
+                            def nativeDebugSymbolsZipFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/native-debug-symbols/release/${file.name}-release.apk.native-debug-symbols.zip")
+                            nativeDebugSymbolsZipFile.renameTo(nativeDebugSymbolsZipFileNewName)
+                        }
+                        // check sdkDependencies.txt
+                        def sdkDependenciesTxtFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/sdk-dependencies/release/sdkDependencies.txt")
+                        if (sdkDependenciesTxtFile.exists()) {
+                            // rename sdkDependencies.txt
+                            def sdkDependenciesTxtFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/sdk-dependencies/release/${file.name}-release.apk.sdkDependencies.txt")
+                            sdkDependenciesTxtFile.renameTo(sdkDependenciesTxtFileNewName)
+                        }
+
+                        // check if is first item
+                        def unsignedApkJsonItem = ""
+                        if (unsignedReleaseApkStringItems.size() != 0) {
+                            unsignedApkJsonItem += ",\n"
+                        }
+
+                        unsignedApkJsonItem += "\"${moduleAndroidPath}/build/outputs/apk/release/${file.name}-release-unsigned.apk\""
+                        unsignedReleaseApkStringItems.add(unsignedApkJsonItem)
+
+                        // check if is first item
+                        def signedApkJsonItem = ""
+                        if (signedReleaseApkStringItems.size() != 0) {
+                            signedApkJsonItem += ",\n"
+                        }
+                        signedApkJsonItem += "\"${moduleAndroidPath}/build/outputs/apk/release/${file.name}-release-signed.apk\""
+                        signedReleaseApkStringItems.add(signedApkJsonItem)
+                    }
+
+                    // debug apk
+                    def debugApkFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/debug/${file.name}-debug.apk")
+                    if (debugApkFile.exists()) {
+                        // check metadata.json
+                        def metadataJsonFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/debug/output-metadata.json")
+                        if (metadataJsonFile.exists()) {
+                            // rename metadata.json
+                            def metadataJsonFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/apk/debug/${file.name}-debug.apk.output-metadata.json")
+                            metadataJsonFile.renameTo(metadataJsonFileNewName)
+                        }
+                        // check native-debug-symbols.zip
+                        def nativeDebugSymbolsZipFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/native-debug-symbols/debug/native-debug-symbols.zip")
+                        if (nativeDebugSymbolsZipFile.exists()) {
+                            // rename native-debug-symbols.zip
+                            def nativeDebugSymbolsZipFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/native-debug-symbols/debug/${file.name}-debug.apk.native-debug-symbols.zip")
+                            nativeDebugSymbolsZipFile.renameTo(nativeDebugSymbolsZipFileNewName)
+                        }
+                        // check sdkDependencies.txt
+                        def sdkDependenciesTxtFile = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/sdk-dependencies/debug/sdkDependencies.txt")
+                        if (sdkDependenciesTxtFile.exists()) {
+                            // rename sdkDependencies.txt
+                            def sdkDependenciesTxtFileNewName = new File("${samplesFolderRelativePath}/${file.name}/project/android/build/outputs/sdk-dependencies/debug/${file.name}-debug.apk.sdkDependencies.txt")
+                            sdkDependenciesTxtFile.renameTo(sdkDependenciesTxtFileNewName)
+                        }
+
+                        // check if is first item
+                        def unsignedApkJsonItem = ""
+                        if (unsignedDebugApkStringItems.size() != 0) {
+                            unsignedApkJsonItem += ",\n"
+                        }
+                        unsignedApkJsonItem += "\"${moduleAndroidPath}/build/outputs/apk/debug/${file.name}-debug.apk\""
+                        unsignedDebugApkStringItems.add(unsignedApkJsonItem)
+                        // check if is first item
+                        def signedApkJsonItem = ""
+                        if (signedDebugApkStringItems.size() != 0) {
+                            signedApkJsonItem += ",\n"
+                        }
+                        signedApkJsonItem += "\"${moduleAndroidPath}/build/outputs/apk/debug/${file.name}-debug-signed.apk\""
+                        signedDebugApkStringItems.add(signedApkJsonItem)
+                    }
+
+                    // check if is first item
+                    def uploadJsonItem = ""
+                    if (uploadJsonStringItems.size() != 0) {
+                        uploadJsonItem += ",\n"
+                    }
+                    uploadJsonItem += "{\"path\":\"${moduleAndroidPath}/build/outputs/apk/release/${file.name}-release-signed.apk\",\"type\":\"apk\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/apk/release/${file.name}-release.apk.output-metadata.json\",\"type\":\"json\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/release/*mapping.txt\",\"type\":\"mapping\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/release/*usage.txt\",\"type\":\"usage\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/release/*seeds.txt\",\"type\":\"seeds\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/release/*configuration.txt\",\"type\":\"configuration\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/release/*missing_rules.txt\",\"type\":\"missingrules\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/native-debug-symbols/release/${file.name}-release.apk.native-debug-symbols.zip\",\"type\":\"symbols\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/sdk-dependencies/release/${file.name}-release.apk.sdkDependencies.txt\",\"type\":\"dependencies\"}" +
+
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/apk/debug/${file.name}-debug-signed.apk\",\"type\":\"apk\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/apk/debug/${file.name}-debug.apk.output-metadata.json\",\"type\":\"json\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/debug/*mapping.txt\",\"type\":\"mapping\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/debug/*usage.txt\",\"type\":\"usage\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/debug/*seeds.txt\",\"type\":\"seeds\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/debug/*configuration.txt\",\"type\":\"configuration\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/mapping/debug/*missing_rules.txt\",\"type\":\"missingrules\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/native-debug-symbols/debug/${file.name}-debug.apk.native-debug-symbols.zip\",\"type\":\"symbols\"}" +
+                            ",\n{\"path\":\"${moduleAndroidPath}/build/outputs/sdk-dependencies/debug/${file.name}-debug.apk.sdkDependencies.txt\",\"type\":\"dependencies\"}"
+
+                    uploadJsonStringItems.add(uploadJsonItem)
+                }
+            }
+        }
+
+        def jsonString = ""
+        def jsonObject = null
+        def prettyJsonString = ""
+        def file = null
+        // uploadArtifacts.json
+        if (uploadJsonStringItems.size() != 0) {
+            jsonString = "[\n" + uploadJsonStringItems.join("") + "\n]"
+            jsonObject = new JsonSlurper().parseText(jsonString)
+            prettyJsonString = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+            file = new File("buildArtifacts.json").withWriter('UTF-8') { writer ->
+                writer.write(prettyJsonString)
+            }
+        }
+
+        // unsignedReleaseApkStringItems
+        if (unsignedReleaseApkStringItems.size() != 0) {
+            jsonString = "[\n" + unsignedReleaseApkStringItems.join("") + "\n]"
+            jsonObject = new JsonSlurper().parseText(jsonString)
+            prettyJsonString = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+            file = new File("unsignedReleaseApk.json").withWriter('UTF-8') { writer ->
+                writer.write(prettyJsonString)
+            }
+        }
+
+        // signedReleaseApkStringItems
+        if (signedReleaseApkStringItems.size()!= 0) {
+            jsonString = "[\n" + signedReleaseApkStringItems.join("") + "\n]"
+            jsonObject = new JsonSlurper().parseText(jsonString)
+            prettyJsonString = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+            file = new File("signedReleaseApk.json").withWriter('UTF-8') { writer ->
+                writer.write(prettyJsonString)
+            }
+        }
+
+        // unsignedDebugApkStringItems
+        if (unsignedDebugApkStringItems.size()!= 0) {
+            jsonString = "[\n" + unsignedDebugApkStringItems.join("") + "\n]"
+            jsonObject = new JsonSlurper().parseText(jsonString)
+            prettyJsonString = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+            file = new File("unsignedDebugApk.json").withWriter('UTF-8') { writer ->
+                writer.write(prettyJsonString)
+            }
+        }
+
+        // signedDebugApkStringItems
+        if (signedDebugApkStringItems.size()!= 0) {
+            jsonString = "[\n" + signedDebugApkStringItems.join("") + "\n]"
+            jsonObject = new JsonSlurper().parseText(jsonString)
+            prettyJsonString = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
+            file = new File("signedDebugApk.json").withWriter('UTF-8') { writer ->
+                writer.write(prettyJsonString)
+            }
+        }
+    }
+}

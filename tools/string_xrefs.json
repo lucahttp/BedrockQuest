@@ -1,0 +1,224 @@
+{
+  "version": "1.26.52.3",
+  "rodata_vaddr": "0x2311800",
+  "rodata_size_kb": 19955,
+  "patterns": {
+    "MinecraftGame": {
+      "pattern": "MinecraftGame",
+      "rodata_hits": 838,
+      "sample_rodata_addrs": [
+        36973888,
+        37137987,
+        37439322,
+        37439401,
+        37592607
+      ]
+    },
+    "AppPlatform": {
+      "pattern": "AppPlatform",
+      "rodata_hits": 101,
+      "sample_rodata_addrs": [
+        38085186,
+        38654140,
+        38654172,
+        38992557,
+        39200049
+      ]
+    },
+    "RenderDragon": {
+      "pattern": "RenderDragon",
+      "rodata_hits": 23,
+      "sample_rodata_addrs": [
+        36913115,
+        37070515,
+        37070536,
+        37070664,
+        37070685
+      ]
+    },
+    "LevelRenderer": {
+      "pattern": "LevelRenderer",
+      "rodata_hits": 129,
+      "sample_rodata_addrs": [
+        37306146,
+        37455140,
+        37455186,
+        38081174,
+        39206274
+      ]
+    },
+    "GameControllerManager": {
+      "pattern": "GameControllerManager",
+      "rodata_hits": 2,
+      "sample_rodata_addrs": [
+        56597646,
+        56597671
+      ]
+    },
+    "TextureAtlas": {
+      "pattern": "TextureAtlas",
+      "rodata_hits": 72,
+      "sample_rodata_addrs": [
+        38294340,
+        38820538,
+        38820577,
+        39743874,
+        39744008
+      ]
+    },
+    "FrameBuffer": {
+      "pattern": "FrameBuffer",
+      "rodata_hits": 11,
+      "sample_rodata_addrs": [
+        39669700,
+        40277680,
+        40278733,
+        41341180,
+        43244710
+      ]
+    },
+    "SwapChain": {
+      "pattern": "SwapChain",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "RenderContext": {
+      "pattern": "RenderContext",
+      "rodata_hits": 818,
+      "sample_rodata_addrs": [
+        36831827,
+        36912746,
+        36912880,
+        40819760,
+        41424816
+      ]
+    },
+    "GpuBuffer": {
+      "pattern": "GpuBuffer",
+      "rodata_hits": 3,
+      "sample_rodata_addrs": [
+        39743641,
+        47516571,
+        47523184
+      ]
+    },
+    "CommandBuffer": {
+      "pattern": "CommandBuffer",
+      "rodata_hits": 4,
+      "sample_rodata_addrs": [
+        38919716,
+        39988107,
+        40302414,
+        41365283
+      ]
+    },
+    "VertexBuffer": {
+      "pattern": "VertexBuffer",
+      "rodata_hits": 46,
+      "sample_rodata_addrs": [
+        38743021,
+        39616728,
+        41185780,
+        41340875,
+        46414791
+      ]
+    },
+    "VK_PRESENT": {
+      "pattern": "VK_PRESENT",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "VK_IMAGE_LAYOUT": {
+      "pattern": "VK_IMAGE_LAYOUT",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "OpenGL": {
+      "pattern": "OpenGL",
+      "rodata_hits": 2,
+      "sample_rodata_addrs": [
+        37992303,
+        41498357
+      ]
+    },
+    "Vulkan": {
+      "pattern": "Vulkan",
+      "rodata_hits": 2,
+      "sample_rodata_addrs": [
+        36777016,
+        37379954
+      ]
+    },
+    "setRenderingSize": {
+      "pattern": "setRenderingSize",
+      "rodata_hits": 2,
+      "sample_rodata_addrs": [
+        46143424,
+        46143493
+      ]
+    },
+    "setUISizeAndScale": {
+      "pattern": "setUISizeAndScale",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "onSurfaceChanged": {
+      "pattern": "onSurfaceChanged",
+      "rodata_hits": 1,
+      "sample_rodata_addrs": [
+        37890490
+      ]
+    },
+    "onSurfaceCreated": {
+      "pattern": "onSurfaceCreated",
+      "rodata_hits": 1,
+      "sample_rodata_addrs": [
+        37268338
+      ]
+    },
+    "onPause": {
+      "pattern": "onPause",
+      "rodata_hits": 2,
+      "sample_rodata_addrs": [
+        37121592,
+        38674578
+      ]
+    },
+    "onResume": {
+      "pattern": "onResume",
+      "rodata_hits": 40,
+      "sample_rodata_addrs": [
+        36817478,
+        36974019,
+        36974048,
+        37439494,
+        37592568
+      ]
+    },
+    "PicoController": {
+      "pattern": "PicoController",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "PxrInput": {
+      "pattern": "PxrInput",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "GamepadMapping": {
+      "pattern": "GamepadMapping",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "InputManager": {
+      "pattern": "InputManager",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    },
+    "VirtualGamepad": {
+      "pattern": "VirtualGamepad",
+      "rodata_hits": 0,
+      "sample_rodata_addrs": []
+    }
+  }
+}
