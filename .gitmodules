@@ -1,0 +1,4 @@
+[submodule "vendor/openxr"]
+	path = vendor/openxr
+	url = https://github.com/KhronosGroup/OpenXR-SDK.git
+	ignore = all
